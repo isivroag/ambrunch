@@ -22,16 +22,16 @@ Partial Class frmcntaunidades
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
-        Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bcambiar = New System.Windows.Forms.ToolStripButton()
         Me.beliminar = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
+        Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.toolmenu.SuspendLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,55 +57,6 @@ Partial Class frmcntaunidades
         Me.toolmenu.Size = New System.Drawing.Size(419, 46)
         Me.toolmenu.TabIndex = 92
         Me.toolmenu.Text = "ToolStrip1"
-        '
-        'grdatos
-        '
-        Me.grdatos.AllowUserToAddRows = False
-        Me.grdatos.AllowUserToDeleteRows = False
-        Me.grdatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grdatos.BackgroundColor = System.Drawing.Color.White
-        Me.grdatos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.grdatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        Me.grdatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.grdatos.ColumnHeadersHeight = 30
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grdatos.DefaultCellStyle = DataGridViewCellStyle5
-        Me.grdatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.grdatos.EnableHeadersVisualStyles = False
-        Me.grdatos.GridColor = System.Drawing.Color.White
-        Me.grdatos.Location = New System.Drawing.Point(12, 92)
-        Me.grdatos.MultiSelect = False
-        Me.grdatos.Name = "grdatos"
-        Me.grdatos.ReadOnly = True
-        Me.grdatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.grdatos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
-        Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdatos.Size = New System.Drawing.Size(395, 168)
-        Me.grdatos.TabIndex = 91
         '
         'bnuevo
         '
@@ -144,6 +95,55 @@ Partial Class frmcntaunidades
         Me.bsalir.Text = "SALIR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'grdatos
+        '
+        Me.grdatos.AllowUserToAddRows = False
+        Me.grdatos.AllowUserToDeleteRows = False
+        Me.grdatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grdatos.BackgroundColor = System.Drawing.Color.White
+        Me.grdatos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.grdatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.grdatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.grdatos.ColumnHeadersHeight = 30
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grdatos.DefaultCellStyle = DataGridViewCellStyle2
+        Me.grdatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.grdatos.EnableHeadersVisualStyles = False
+        Me.grdatos.GridColor = System.Drawing.Color.White
+        Me.grdatos.Location = New System.Drawing.Point(12, 92)
+        Me.grdatos.MultiSelect = False
+        Me.grdatos.Name = "grdatos"
+        Me.grdatos.ReadOnly = True
+        Me.grdatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.grdatos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
+        Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.grdatos.Size = New System.Drawing.Size(395, 168)
+        Me.grdatos.TabIndex = 91
+        '
         'frmcntaunidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -153,6 +153,8 @@ Partial Class frmcntaunidades
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.grdatos)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmcntaunidades"
         Me.Text = "frmcntaunidades"
         Me.toolmenu.ResumeLayout(False)

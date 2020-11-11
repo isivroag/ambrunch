@@ -24,6 +24,8 @@ Partial Class frmproducto
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.tprecio = New System.Windows.Forms.TextBox()
         Me.cunidad = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -33,8 +35,6 @@ Partial Class frmproducto
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
         Me.bguardar = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.tprecio = New System.Windows.Forms.TextBox()
         Me.GroupBox.SuspendLayout()
         Me.toolmenu.SuspendLayout()
         Me.SuspendLayout()
@@ -66,6 +66,24 @@ Partial Class frmproducto
         Me.GroupBox.Size = New System.Drawing.Size(444, 154)
         Me.GroupBox.TabIndex = 81
         Me.GroupBox.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(238, 95)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 15)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "PRECIO"
+        '
+        'tprecio
+        '
+        Me.tprecio.Location = New System.Drawing.Point(264, 110)
+        Me.tprecio.Multiline = True
+        Me.tprecio.Name = "tprecio"
+        Me.tprecio.Size = New System.Drawing.Size(170, 21)
+        Me.tprecio.TabIndex = 20
         '
         'cunidad
         '
@@ -151,24 +169,6 @@ Partial Class frmproducto
         Me.bsalir.Text = "CANCELAR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(238, 95)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 15)
-        Me.Label4.TabIndex = 19
-        Me.Label4.Text = "PRECIO"
-        '
-        'tprecio
-        '
-        Me.tprecio.Location = New System.Drawing.Point(264, 110)
-        Me.tprecio.Multiline = True
-        Me.tprecio.Name = "tprecio"
-        Me.tprecio.Size = New System.Drawing.Size(170, 21)
-        Me.tprecio.TabIndex = 20
-        '
         'frmproducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -178,6 +178,8 @@ Partial Class frmproducto
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox)
         Me.Controls.Add(Me.toolmenu)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmproducto"
         Me.Text = "frmproducto"
         Me.GroupBox.ResumeLayout(False)

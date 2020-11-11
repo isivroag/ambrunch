@@ -38,8 +38,8 @@ Partial Class frmkardex
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tid = New System.Windows.Forms.TextBox()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
-        Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
+        Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox.SuspendLayout()
@@ -216,6 +216,15 @@ Partial Class frmkardex
         Me.toolmenu.TabIndex = 94
         Me.toolmenu.Text = "ToolStrip1"
         '
+        'bnuevo
+        '
+        Me.bnuevo.Image = Global.AMBRUNCH.My.Resources.Resources.transfer
+        Me.bnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bnuevo.Name = "bnuevo"
+        Me.bnuevo.Size = New System.Drawing.Size(84, 43)
+        Me.bnuevo.Text = "MOVIMIENTO"
+        Me.bnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'bsalir
         '
         Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -225,15 +234,6 @@ Partial Class frmkardex
         Me.bsalir.Size = New System.Drawing.Size(41, 43)
         Me.bsalir.Text = "SALIR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bnuevo
-        '
-        Me.bnuevo.Image = Global.AMBRUNCH.My.Resources.Resources.transfer
-        Me.bnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bnuevo.Name = "bnuevo"
-        Me.bnuevo.Size = New System.Drawing.Size(84, 43)
-        Me.bnuevo.Text = "MOVIMIENTO"
-        Me.bnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'frmkardex
         '
@@ -245,6 +245,8 @@ Partial Class frmkardex
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox)
         Me.Controls.Add(Me.toolmenu)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmkardex"
         Me.Text = "frmkardex"
         Me.GroupBox1.ResumeLayout(False)

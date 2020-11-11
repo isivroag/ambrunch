@@ -448,4 +448,79 @@ Public Class c_mysqlconn
         Return estado
     End Function
 #End Region
+
+#Region "VENTAS"
+    Public Function ventanueva() As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.InsertCommand = New MySqlCommand("insert into venta (folio_fis,fecha_vta,cliente,total_vta,fact_vta,letra,estado_vta) values (0,@fecha_vta,@cliente,@total_vta,@fact_vta,@letra,@estado_vta)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@fecha_vta", MySqlDbType.DateTime).Value = Format(Now, "yyyy-MM-dd HH:mm:ss")
+            adaptador.InsertCommand.Parameters.Add("@cliente", MySqlDbType.String).Value = "PUBLICO EN GENERAL"
+            adaptador.InsertCommand.Parameters.Add("@total_vta", MySqlDbType.Double).Value = 0
+            adaptador.InsertCommand.Parameters.Add("@fact_vta", MySqlDbType.Int16).Value = 0
+            adaptador.InsertCommand.Parameters.Add("@estado_vta", MySqlDbType.Int16).Value = 0
+            adaptador.InsertCommand.Parameters.Add("@letra", MySqlDbType.String).Value = ""
+            _conexion.Open()
+            adaptador.InsertCommand.Connection = _conexion
+            adaptador.InsertCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+
+    Public Function actualizarventa(ByVal datos As c_venta, ByVal folio As Integer) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.UpdateCommand = New MySqlCommand("update venta set fecha_vta=@fecha_vta,cliente_vta=@cliente_vta,total_vta=@total_vta,fact_vta=@fact_vta,letra=@letra,estado_vta=@estado_vta where folio_vta=@folio_vta", _conexion)
+            adaptador.UpdateCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = folio
+            adaptador.UpdateCommand.Parameters.Add("@fecha_vta", MySqlDbType.DateTime).Value = Format(datos.Fecha_vta, "yyyy-MM-dd HH:mm:ss")
+            adaptador.UpdateCommand.Parameters.Add("@cliente_vta", MySqlDbType.String).Value = datos.Cliente
+
+            adaptador.UpdateCommand.Parameters.Add("@total_vta", MySqlDbType.Double).Value = datos.Total_vta
+            adaptador.UpdateCommand.Parameters.Add("@fact_vta", MySqlDbType.Int16).Value = datos.Fact_vta
+            adaptador.UpdateCommand.Parameters.Add("@letra", MySqlDbType.String).Value = datos.Letra
+            adaptador.UpdateCommand.Parameters.Add("@estado_vta", MySqlDbType.Int16).Value = 1
+            _conexion.Open()
+            adaptador.UpdateCommand.Connection = _conexion
+            adaptador.UpdateCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+
+    Public Function cancelarventa(ByVal folio As Integer) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.UpdateCommand = New MySqlCommand("update venta set estado_vta='0' where folio_vta=@folio_vta", _conexion)
+            adaptador.UpdateCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = folio
+
+            _conexion.Open()
+            adaptador.UpdateCommand.Connection = _conexion
+            adaptador.UpdateCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+#End Region
 End Class

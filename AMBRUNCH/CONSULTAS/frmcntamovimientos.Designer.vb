@@ -31,8 +31,8 @@ Partial Class frmcntamovimientos
         Me.ttotal = New System.Windows.Forms.TextBox()
         Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
-        Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bimprimir = New System.Windows.Forms.ToolStripButton()
+        Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.chmov = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,6 +140,15 @@ Partial Class frmcntamovimientos
         Me.toolmenu.TabIndex = 89
         Me.toolmenu.Text = "ToolStrip1"
         '
+        'bimprimir
+        '
+        Me.bimprimir.Image = Global.AMBRUNCH.My.Resources.Resources.excel
+        Me.bimprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bimprimir.Name = "bimprimir"
+        Me.bimprimir.Size = New System.Drawing.Size(66, 43)
+        Me.bimprimir.Text = "EXPORTAR"
+        Me.bimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'bsalir
         '
         Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -149,15 +158,6 @@ Partial Class frmcntamovimientos
         Me.bsalir.Size = New System.Drawing.Size(41, 43)
         Me.bsalir.Text = "SALIR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bimprimir
-        '
-        Me.bimprimir.Image = Global.AMBRUNCH.My.Resources.Resources.excel
-        Me.bimprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bimprimir.Name = "bimprimir"
-        Me.bimprimir.Size = New System.Drawing.Size(66, 43)
-        Me.bimprimir.Text = "EXPORTAR"
-        Me.bimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'chmov
         '
@@ -175,11 +175,14 @@ Partial Class frmcntamovimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(727, 405)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.chmov)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmcntamovimientos"
         Me.Text = "frmcntamovimientos"
         Me.GroupBox1.ResumeLayout(False)

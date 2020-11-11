@@ -112,6 +112,8 @@ Partial Class frmlogin
         Me.Controls.Add(Me.tpassword)
         Me.Controls.Add(Me.tlogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmlogin"
         Me.Text = "INICIO SISTEMA PUNTO DE VENTA"
         CType(Me.imagen, System.ComponentModel.ISupportInitialize).EndInit()

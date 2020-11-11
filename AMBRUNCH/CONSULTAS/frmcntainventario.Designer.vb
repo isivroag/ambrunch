@@ -89,7 +89,7 @@ Partial Class frmcntainventario
         '
         Me.calmacen.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.calmacen.FormattingEnabled = True
-        Me.calmacen.Location = New System.Drawing.Point(227, 112)
+        Me.calmacen.Location = New System.Drawing.Point(241, 449)
         Me.calmacen.Name = "calmacen"
         Me.calmacen.Size = New System.Drawing.Size(214, 21)
         Me.calmacen.TabIndex = 87
@@ -99,7 +99,7 @@ Partial Class frmcntainventario
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(159, 114)
+        Me.Label2.Location = New System.Drawing.Point(173, 451)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(62, 15)
         Me.Label2.TabIndex = 86
@@ -164,19 +164,22 @@ Partial Class frmcntainventario
         Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.grdatos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
         Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdatos.Size = New System.Drawing.Size(578, 312)
+        Me.grdatos.Size = New System.Drawing.Size(578, 332)
         Me.grdatos.TabIndex = 84
         '
         'frmcntainventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(601, 416)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(601, 436)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.calmacen)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.grdatos)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmcntainventario"
         Me.Text = "frmcntainventario"
         Me.toolmenu.ResumeLayout(False)

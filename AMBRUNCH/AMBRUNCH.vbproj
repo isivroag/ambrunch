@@ -93,6 +93,7 @@
     <Compile Include="CLASES\c_movimiento.vb" />
     <Compile Include="CLASES\c_producto.vb" />
     <Compile Include="CLASES\c_unidad.vb" />
+    <Compile Include="CLASES\c_venta.vb" />
     <Compile Include="CONEXION\c_mysqlconn.vb" />
     <Compile Include="CONSULTAS\frmcntainventario.Designer.vb">
       <DependentUpon>frmcntainventario.vb</DependentUpon>
@@ -153,6 +154,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="OPERACIONES\frmcaja.Designer.vb">
+      <DependentUpon>frmcaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OPERACIONES\frmcaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OPERACIONES\frmmovimientos.Designer.vb">
       <DependentUpon>frmmovimientos.vb</DependentUpon>
     </Compile>
@@ -194,6 +201,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERACIONES\frmcaja.resx">
+      <DependentUpon>frmcaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OPERACIONES\frmmovimientos.resx">
       <DependentUpon>frmmovimientos.vb</DependentUpon>
@@ -296,6 +306,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basketplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basketmenos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

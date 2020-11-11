@@ -27,12 +27,12 @@ Partial Class frmcntaproducto
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ltitulo = New System.Windows.Forms.Label()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
-        Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bcambiar = New System.Windows.Forms.ToolStripButton()
         Me.beliminar = New System.Windows.Forms.ToolStripButton()
         Me.binventario = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
+        Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.toolmenu.SuspendLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,6 +58,52 @@ Partial Class frmcntaproducto
         Me.toolmenu.Size = New System.Drawing.Size(624, 46)
         Me.toolmenu.TabIndex = 80
         Me.toolmenu.Text = "ToolStrip1"
+        '
+        'bnuevo
+        '
+        Me.bnuevo.Image = Global.AMBRUNCH.My.Resources.Resources._NEW
+        Me.bnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bnuevo.Name = "bnuevo"
+        Me.bnuevo.Size = New System.Drawing.Size(50, 43)
+        Me.bnuevo.Text = "NUEVO"
+        Me.bnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bcambiar
+        '
+        Me.bcambiar.Image = Global.AMBRUNCH.My.Resources.Resources.EDIT
+        Me.bcambiar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcambiar.Name = "bcambiar"
+        Me.bcambiar.Size = New System.Drawing.Size(63, 43)
+        Me.bcambiar.Text = "CAMBIAR"
+        Me.bcambiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'beliminar
+        '
+        Me.beliminar.Image = Global.AMBRUNCH.My.Resources.Resources.DELETE
+        Me.beliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.beliminar.Name = "beliminar"
+        Me.beliminar.Size = New System.Drawing.Size(64, 43)
+        Me.beliminar.Text = "ELIMINAR"
+        Me.beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'binventario
+        '
+        Me.binventario.Image = Global.AMBRUNCH.My.Resources.Resources.listainventario
+        Me.binventario.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.binventario.Name = "binventario"
+        Me.binventario.Size = New System.Drawing.Size(77, 43)
+        Me.binventario.Text = "INVENTARIO"
+        Me.binventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bsalir
+        '
+        Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.bsalir.Image = Global.AMBRUNCH.My.Resources.Resources.SALIR
+        Me.bsalir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bsalir.Name = "bsalir"
+        Me.bsalir.Size = New System.Drawing.Size(41, 43)
+        Me.bsalir.Text = "SALIR"
+        Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'grdatos
         '
@@ -108,52 +154,6 @@ Partial Class frmcntaproducto
         Me.grdatos.Size = New System.Drawing.Size(600, 306)
         Me.grdatos.TabIndex = 79
         '
-        'bnuevo
-        '
-        Me.bnuevo.Image = Global.AMBRUNCH.My.Resources.Resources._NEW
-        Me.bnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bnuevo.Name = "bnuevo"
-        Me.bnuevo.Size = New System.Drawing.Size(50, 43)
-        Me.bnuevo.Text = "NUEVO"
-        Me.bnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bcambiar
-        '
-        Me.bcambiar.Image = Global.AMBRUNCH.My.Resources.Resources.EDIT
-        Me.bcambiar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bcambiar.Name = "bcambiar"
-        Me.bcambiar.Size = New System.Drawing.Size(63, 43)
-        Me.bcambiar.Text = "CAMBIAR"
-        Me.bcambiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'beliminar
-        '
-        Me.beliminar.Image = Global.AMBRUNCH.My.Resources.Resources.DELETE
-        Me.beliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.beliminar.Name = "beliminar"
-        Me.beliminar.Size = New System.Drawing.Size(64, 43)
-        Me.beliminar.Text = "ELIMINAR"
-        Me.beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'binventario
-        '
-        Me.binventario.Image = Global.AMBRUNCH.My.Resources.Resources.listainventario
-        Me.binventario.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.binventario.Name = "binventario"
-        Me.binventario.Size = New System.Drawing.Size(77, 43)
-        Me.binventario.Text = "INVENTARIO"
-        Me.binventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bsalir
-        '
-        Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bsalir.Image = Global.AMBRUNCH.My.Resources.Resources.SALIR
-        Me.bsalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bsalir.Name = "bsalir"
-        Me.bsalir.Size = New System.Drawing.Size(41, 43)
-        Me.bsalir.Text = "SALIR"
-        Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'frmcntaproducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -163,6 +163,8 @@ Partial Class frmcntaproducto
         Me.Controls.Add(Me.ltitulo)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.grdatos)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmcntaproducto"
         Me.Text = "frmcntaproducto"
         Me.toolmenu.ResumeLayout(False)
