@@ -120,4 +120,12 @@ Public Class frmcaja
     Private Sub bsalir_Click(sender As Object, e As EventArgs) Handles bsalir.Click
         Dispose()
     End Sub
+
+    Private Sub bcancelar_Click(sender As Object, e As EventArgs) Handles bcancelar.Click
+        conn.borrarventa(tfolio.Text)
+        deshabilitar()
+        limpiar()
+        conn = New c_mysqlconn
+
+    End Sub
 End Class

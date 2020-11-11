@@ -522,5 +522,26 @@ Public Class c_mysqlconn
         End Try
         Return estado
     End Function
+
+    Public Function borrarventa(ByVal folio As Integer) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.DeleteCommand = New MySqlCommand("delete from venta where folio_vta=@folio_vta", _conexion)
+            adaptador.DeleteCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = folio
+
+            _conexion.Open()
+            adaptador.DeleteCommand.Connection = _conexion
+            adaptador.DeleteCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
 #End Region
 End Class
