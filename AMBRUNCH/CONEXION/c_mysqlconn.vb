@@ -450,11 +450,12 @@ Public Class c_mysqlconn
 #End Region
 
 #Region "VENTAS"
-    Public Function ventanueva() As Boolean
+    Public Function ventanueva(ByVal folio As Integer) As Boolean
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.InsertCommand = New MySqlCommand("insert into venta (folio_fis,fecha_vta,cliente,total_vta,fact_vta,letra,estado_vta) values (0,@fecha_vta,@cliente,@total_vta,@fact_vta,@letra,@estado_vta)", _conexion)
+            adaptador.InsertCommand = New MySqlCommand("insert into venta (folio_vta,folio_fis,fecha_vta,cliente,total_vta,fact_vta,letra,estado_vta) values (@folio_vta,@folio_vta,@fecha_vta,@cliente,@total_vta,@fact_vta,@letra,@estado_vta)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = folio
             adaptador.InsertCommand.Parameters.Add("@fecha_vta", MySqlDbType.DateTime).Value = Format(Now, "yyyy-MM-dd HH:mm:ss")
             adaptador.InsertCommand.Parameters.Add("@cliente", MySqlDbType.String).Value = "PUBLICO EN GENERAL"
             adaptador.InsertCommand.Parameters.Add("@total_vta", MySqlDbType.Double).Value = 0
@@ -479,7 +480,7 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.UpdateCommand = New MySqlCommand("update venta set fecha_vta=@fecha_vta,cliente_vta=@cliente_vta,total_vta=@total_vta,fact_vta=@fact_vta,letra=@letra,estado_vta=@estado_vta where folio_vta=@folio_vta", _conexion)
+            adaptador.UpdateCommand = New MySqlCommand("update venta set fecha_vta=@fecha_vta,cliente=@cliente_vta,total_vta=@total_vta,fact_vta=@fact_vta,letra=@letra,estado_vta=@estado_vta where folio_vta=@folio_vta", _conexion)
             adaptador.UpdateCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = folio
             adaptador.UpdateCommand.Parameters.Add("@fecha_vta", MySqlDbType.DateTime).Value = Format(datos.Fecha_vta, "yyyy-MM-dd HH:mm:ss")
             adaptador.UpdateCommand.Parameters.Add("@cliente_vta", MySqlDbType.String).Value = datos.Cliente
@@ -533,6 +534,91 @@ Public Class c_mysqlconn
             _conexion.Open()
             adaptador.DeleteCommand.Connection = _conexion
             adaptador.DeleteCommand.ExecuteNonQuery()
+
+            adaptador.DeleteCommand = New MySqlCommand("delete from det_vta where folio_vta=@folio_vta", _conexion)
+            adaptador.DeleteCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = folio
+
+
+            adaptador.DeleteCommand.Connection = _conexion
+            adaptador.DeleteCommand.ExecuteNonQuery()
+
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+#End Region
+
+#Region "DETALLE DE VENTA"
+    Public Function insertarnuevo(ByVal datos As c_det_vta) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.InsertCommand = New MySqlCommand("insert into det_vta (folio_vta,id_prod,nom_prod,cantidad,unidad_prod,precio_prod,subtotal) values (@folio_vta,@id_prod,@nom_prod,@cantidad,@unidad,@precio_prod,@subtotal)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = datos.Folio_vta
+            adaptador.InsertCommand.Parameters.Add("@id_prod", MySqlDbType.Int64).Value = datos.Id_prod
+            adaptador.InsertCommand.Parameters.Add("@nom_prod", MySqlDbType.String).Value = datos.Nom_prod
+            adaptador.InsertCommand.Parameters.Add("@cantidad", MySqlDbType.Double).Value = datos.Cantidad
+            adaptador.InsertCommand.Parameters.Add("@unidad", MySqlDbType.String).Value = datos.Unidad_prod
+            adaptador.InsertCommand.Parameters.Add("@precio_prod", MySqlDbType.Double).Value = datos.Precio_prod
+            adaptador.InsertCommand.Parameters.Add("@subtotal", MySqlDbType.Double).Value = datos.Subtotal
+            _conexion.Open()
+            adaptador.InsertCommand.Connection = _conexion
+            adaptador.InsertCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+
+    Public Function eliminardetalle(ByVal folio As Integer) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.DeleteCommand = New MySqlCommand("delete from det_vta where id_reg=@id_reg", _conexion)
+            adaptador.DeleteCommand.Parameters.Add("@id_reg", MySqlDbType.Int64).Value = folio
+
+            _conexion.Open()
+            adaptador.DeleteCommand.Connection = _conexion
+            adaptador.DeleteCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+#End Region
+
+#Region "PAGO"
+    Public Function insertarnuevo(ByVal datos As c_pago) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.InsertCommand = New MySqlCommand("insert into pago (folio_vta,total_pago,dinero,cambio,letra,metodo) values (@folio_vta,@total_pago,@dinero,@cambio,@letra,@metodo)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = datos.Folio_vta
+            adaptador.InsertCommand.Parameters.Add("@total_pago", MySqlDbType.Double).Value = datos.Total_pago
+            adaptador.InsertCommand.Parameters.Add("@dinero", MySqlDbType.Double).Value = datos.Dinero
+            adaptador.InsertCommand.Parameters.Add("@cambio", MySqlDbType.Double).Value = datos.Cambio
+            adaptador.InsertCommand.Parameters.Add("@letra", MySqlDbType.String).Value = datos.Letra
+            adaptador.InsertCommand.Parameters.Add("@metodo", MySqlDbType.String).Value = datos.Metodo
+
+            _conexion.Open()
+            adaptador.InsertCommand.Connection = _conexion
+            adaptador.InsertCommand.ExecuteNonQuery()
 
 
         Catch ex As MySqlException

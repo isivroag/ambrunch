@@ -90,11 +90,19 @@
     <Compile Include="CATALOGOS\frmunidad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CLASES\c_det_vta.vb" />
     <Compile Include="CLASES\c_movimiento.vb" />
+    <Compile Include="CLASES\c_pago.vb" />
     <Compile Include="CLASES\c_producto.vb" />
     <Compile Include="CLASES\c_unidad.vb" />
     <Compile Include="CLASES\c_venta.vb" />
     <Compile Include="CONEXION\c_mysqlconn.vb" />
+    <Compile Include="CONSULTAS\frmbuscarp.Designer.vb">
+      <DependentUpon>frmbuscarp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAS\frmbuscarp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONSULTAS\frmcntainventario.Designer.vb">
       <DependentUpon>frmcntainventario.vb</DependentUpon>
     </Compile>
@@ -154,6 +162,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="OPERACIONES\frmauxventa.Designer.vb">
+      <DependentUpon>frmauxventa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OPERACIONES\frmauxventa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OPERACIONES\frmcaja.Designer.vb">
       <DependentUpon>frmcaja.vb</DependentUpon>
     </Compile>
@@ -166,6 +180,12 @@
     <Compile Include="OPERACIONES\frmmovimientos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="OPERACIONES\frmpago.Designer.vb">
+      <DependentUpon>frmpago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OPERACIONES\frmpago.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TOOL\principal.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CATALOGOS\frmunidad.resx">
       <DependentUpon>frmunidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAS\frmbuscarp.resx">
+      <DependentUpon>frmbuscarp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\frmcntainventario.resx">
       <DependentUpon>frmcntainventario.vb</DependentUpon>
@@ -202,11 +225,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="OPERACIONES\frmauxventa.resx">
+      <DependentUpon>frmauxventa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OPERACIONES\frmcaja.resx">
       <DependentUpon>frmcaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OPERACIONES\frmmovimientos.resx">
       <DependentUpon>frmmovimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERACIONES\frmpago.resx">
+      <DependentUpon>frmpago.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +341,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\basketmenos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEARCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PLUS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

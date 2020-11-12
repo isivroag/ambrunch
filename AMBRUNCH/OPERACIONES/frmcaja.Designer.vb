@@ -22,17 +22,14 @@ Partial Class frmcaja
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcaja))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GPANEL = New System.Windows.Forms.GroupBox()
         Me.cfact = New System.Windows.Forms.CheckBox()
         Me.grdetalle = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ttotal = New System.Windows.Forms.TextBox()
-        Me.bquitar = New System.Windows.Forms.Button()
-        Me.bagregar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tfecha = New System.Windows.Forms.DateTimePicker()
@@ -45,6 +42,8 @@ Partial Class frmcaja
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bpagar = New System.Windows.Forms.ToolStripButton()
         Me.bcancelar = New System.Windows.Forms.ToolStripButton()
+        Me.bquitar = New System.Windows.Forms.Button()
+        Me.bagregar = New System.Windows.Forms.Button()
         Me.GPANEL.SuspendLayout()
         CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.toolmenu.SuspendLayout()
@@ -70,7 +69,7 @@ Partial Class frmcaja
         Me.GPANEL.ForeColor = System.Drawing.Color.Silver
         Me.GPANEL.Location = New System.Drawing.Point(12, 50)
         Me.GPANEL.Name = "GPANEL"
-        Me.GPANEL.Size = New System.Drawing.Size(548, 556)
+        Me.GPANEL.Size = New System.Drawing.Size(697, 490)
         Me.GPANEL.TabIndex = 60
         Me.GPANEL.TabStop = False
         '
@@ -78,7 +77,7 @@ Partial Class frmcaja
         '
         Me.cfact.AutoSize = True
         Me.cfact.ForeColor = System.Drawing.Color.Black
-        Me.cfact.Location = New System.Drawing.Point(36, 104)
+        Me.cfact.Location = New System.Drawing.Point(29, 120)
         Me.cfact.Name = "cfact"
         Me.cfact.Size = New System.Drawing.Size(179, 17)
         Me.cfact.TabIndex = 66
@@ -95,49 +94,49 @@ Partial Class frmcaja
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdetalle.BackgroundColor = System.Drawing.Color.White
         Me.grdetalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.grdetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.grdetalle.ColumnHeadersHeight = 30
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle2
         Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.grdetalle.EnableHeadersVisualStyles = False
         Me.grdetalle.GridColor = System.Drawing.Color.White
-        Me.grdetalle.Location = New System.Drawing.Point(18, 159)
+        Me.grdetalle.Location = New System.Drawing.Point(18, 170)
         Me.grdetalle.MultiSelect = False
         Me.grdetalle.Name = "grdetalle"
         Me.grdetalle.ReadOnly = True
         Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdetalle.Size = New System.Drawing.Size(517, 267)
+        Me.grdetalle.Size = New System.Drawing.Size(666, 267)
         Me.grdetalle.TabIndex = 65
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(324, 511)
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(466, 443)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(86, 32)
         Me.Label5.TabIndex = 59
@@ -146,43 +145,18 @@ Partial Class frmcaja
         'ttotal
         '
         Me.ttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ttotal.Location = New System.Drawing.Point(416, 511)
+        Me.ttotal.Location = New System.Drawing.Point(558, 443)
         Me.ttotal.Name = "ttotal"
         Me.ttotal.Size = New System.Drawing.Size(126, 35)
         Me.ttotal.TabIndex = 58
         Me.ttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'bquitar
-        '
-        Me.bquitar.BackColor = System.Drawing.Color.White
-        Me.bquitar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketmenos
-        Me.bquitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.bquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bquitar.Location = New System.Drawing.Point(479, 120)
-        Me.bquitar.Name = "bquitar"
-        Me.bquitar.Size = New System.Drawing.Size(39, 33)
-        Me.bquitar.TabIndex = 57
-        Me.bquitar.UseVisualStyleBackColor = False
-        '
-        'bagregar
-        '
-        Me.bagregar.BackColor = System.Drawing.Color.White
-        Me.bagregar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketplus
-        Me.bagregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.bagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bagregar.ForeColor = System.Drawing.Color.Black
-        Me.bagregar.Location = New System.Drawing.Point(434, 120)
-        Me.bagregar.Name = "bagregar"
-        Me.bagregar.Size = New System.Drawing.Size(39, 33)
-        Me.bagregar.TabIndex = 56
-        Me.bagregar.UseVisualStyleBackColor = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(34, 138)
+        Me.Label4.Location = New System.Drawing.Point(15, 152)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(112, 15)
         Me.Label4.TabIndex = 55
@@ -193,7 +167,7 @@ Partial Class frmcaja
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(376, 18)
+        Me.Label1.Location = New System.Drawing.Point(555, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 15)
         Me.Label1.TabIndex = 51
@@ -202,10 +176,11 @@ Partial Class frmcaja
         'tfecha
         '
         Me.tfecha.CustomFormat = "yyyy-MM-dd"
+        Me.tfecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.tfecha.Location = New System.Drawing.Point(391, 37)
+        Me.tfecha.Location = New System.Drawing.Point(558, 37)
         Me.tfecha.Name = "tfecha"
-        Me.tfecha.Size = New System.Drawing.Size(126, 20)
+        Me.tfecha.Size = New System.Drawing.Size(126, 29)
         Me.tfecha.TabIndex = 50
         '
         'Label6
@@ -213,7 +188,7 @@ Partial Class frmcaja
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(33, 18)
+        Me.Label6.Location = New System.Drawing.Point(7, 18)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 15)
         Me.Label6.TabIndex = 48
@@ -221,9 +196,10 @@ Partial Class frmcaja
         '
         'tfolio
         '
-        Me.tfolio.Location = New System.Drawing.Point(44, 37)
+        Me.tfolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tfolio.Location = New System.Drawing.Point(18, 37)
         Me.tfolio.Name = "tfolio"
-        Me.tfolio.Size = New System.Drawing.Size(97, 20)
+        Me.tfolio.Size = New System.Drawing.Size(97, 26)
         Me.tfolio.TabIndex = 49
         '
         'Label3
@@ -231,7 +207,7 @@ Partial Class frmcaja
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(33, 60)
+        Me.Label3.Location = New System.Drawing.Point(7, 66)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 15)
         Me.Label3.TabIndex = 46
@@ -239,18 +215,20 @@ Partial Class frmcaja
         '
         'tcliente
         '
-        Me.tcliente.Location = New System.Drawing.Point(44, 78)
+        Me.tcliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tcliente.Location = New System.Drawing.Point(18, 88)
         Me.tcliente.Name = "tcliente"
-        Me.tcliente.Size = New System.Drawing.Size(473, 20)
+        Me.tcliente.Size = New System.Drawing.Size(666, 26)
         Me.tcliente.TabIndex = 47
         '
         'toolmenu
         '
+        Me.toolmenu.BackColor = System.Drawing.Color.White
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bnuevo, Me.bsalir, Me.bpagar, Me.bcancelar})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
-        Me.toolmenu.Size = New System.Drawing.Size(583, 46)
+        Me.toolmenu.Size = New System.Drawing.Size(721, 46)
         Me.toolmenu.TabIndex = 93
         Me.toolmenu.Text = "ToolStrip1"
         '
@@ -275,7 +253,7 @@ Partial Class frmcaja
         '
         'bpagar
         '
-        Me.bpagar.Image = CType(resources.GetObject("bpagar.Image"), System.Drawing.Image)
+        Me.bpagar.Image = Global.AMBRUNCH.My.Resources.Resources.pay
         Me.bpagar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.bpagar.Name = "bpagar"
         Me.bpagar.Size = New System.Drawing.Size(48, 43)
@@ -293,11 +271,37 @@ Partial Class frmcaja
         Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.bcancelar.Visible = False
         '
+        'bquitar
+        '
+        Me.bquitar.BackColor = System.Drawing.Color.White
+        Me.bquitar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketmenos
+        Me.bquitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bquitar.Location = New System.Drawing.Point(645, 131)
+        Me.bquitar.Name = "bquitar"
+        Me.bquitar.Size = New System.Drawing.Size(39, 33)
+        Me.bquitar.TabIndex = 57
+        Me.bquitar.UseVisualStyleBackColor = False
+        '
+        'bagregar
+        '
+        Me.bagregar.BackColor = System.Drawing.Color.White
+        Me.bagregar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketplus
+        Me.bagregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bagregar.ForeColor = System.Drawing.Color.Black
+        Me.bagregar.Location = New System.Drawing.Point(600, 131)
+        Me.bagregar.Name = "bagregar"
+        Me.bagregar.Size = New System.Drawing.Size(39, 33)
+        Me.bagregar.TabIndex = 56
+        Me.bagregar.UseVisualStyleBackColor = False
+        '
         'frmcaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(583, 617)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(721, 548)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.GPANEL)
         Me.Name = "frmcaja"
