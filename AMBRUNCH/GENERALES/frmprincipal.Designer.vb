@@ -28,6 +28,7 @@ Partial Class frmprincipal
         Me.bcaja = New System.Windows.Forms.ToolStripButton()
         Me.binventario = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
+        Me.bcntaticket = New System.Windows.Forms.ToolStripButton()
         Me.toolmenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -35,7 +36,7 @@ Partial Class frmprincipal
         '
         Me.toolmenu.BackColor = System.Drawing.Color.White
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(1088, 54)
@@ -88,6 +89,15 @@ Partial Class frmprincipal
         Me.bsalir.Text = "SALIR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'bcntaticket
+        '
+        Me.bcntaticket.Image = Global.AMBRUNCH.My.Resources.Resources.rptcaja
+        Me.bcntaticket.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcntaticket.Name = "bcntaticket"
+        Me.bcntaticket.Size = New System.Drawing.Size(63, 51)
+        Me.bcntaticket.Text = "RPT CAJA"
+        Me.bcntaticket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -114,4 +124,5 @@ Partial Class frmprincipal
     Friend WithEvents bcaja As ToolStripButton
     Friend WithEvents binventario As ToolStripButton
     Friend WithEvents bsalir As ToolStripButton
+    Friend WithEvents bcntaticket As ToolStripButton
 End Class

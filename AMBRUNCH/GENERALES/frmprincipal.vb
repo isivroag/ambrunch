@@ -30,4 +30,10 @@
     Private Sub frmprincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         inicial(sender, e, "BIENVENIDO")
     End Sub
+
+    Private Sub bcntaticket_Click(sender As Object, e As EventArgs) Handles bcntaticket.Click
+        frmcntaticket.Show()
+        frmcntaticket.BringToFront()
+
+    End Sub
 End Class

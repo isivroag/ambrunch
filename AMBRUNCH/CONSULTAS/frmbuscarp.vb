@@ -97,5 +97,7 @@ Public Class frmbuscarp
 
     End Sub
 
+    Private Sub grdetalle_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdetalle.CellContentClick
 
+    End Sub
 End Class

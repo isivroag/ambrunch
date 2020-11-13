@@ -40,10 +40,10 @@ Public Class frmpago
     Private Sub imprimir()
 
 
-        'frmrpt.folio = foliovta
-        'frmrpt.ticket()
-        'frmrpt.ShowDialog()
-        'frmrpt.BringToFront()
+        frmrpt.folio = foliovta
+        frmrpt.ticket()
+        frmrpt.ShowDialog()
+        frmrpt.BringToFront()
 
     End Sub
     Private Sub calcular()

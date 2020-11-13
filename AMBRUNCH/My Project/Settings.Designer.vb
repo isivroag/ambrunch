@@ -101,6 +101,17 @@ Namespace My
                 Me("pwd") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;password=tecniem;persistsecurityinfo=True;database="& _ 
+            "ambrunch")>  _
+        Public ReadOnly Property ambrunchConnectionS() As String
+            Get
+                Return CType(Me("ambrunchConnectionS"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
