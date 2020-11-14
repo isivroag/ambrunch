@@ -134,6 +134,12 @@
     <Compile Include="CONSULTAS\frmcntaunidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CONSULTAS\frmcortecaja.Designer.vb">
+      <DependentUpon>frmcortecaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAS\frmcortecaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONSULTAS\frmkardex.Designer.vb">
       <DependentUpon>frmkardex.vb</DependentUpon>
     </Compile>
@@ -199,6 +205,18 @@
     <Compile Include="REPORTES\frmrpt.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="REPORTES\rptcaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptcaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\rptcorte.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptcorte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REPORTES\rptticket.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -232,6 +250,9 @@
     <EmbeddedResource Include="CONSULTAS\frmcntaunidades.resx">
       <DependentUpon>frmcntaunidades.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAS\frmcortecaja.resx">
+      <DependentUpon>frmcortecaja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\frmkardex.resx">
       <DependentUpon>frmkardex.vb</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +282,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\frmrpt.resx">
       <DependentUpon>frmrpt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rptcaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptcaja.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\rptcorte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptcorte.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTES\rptticket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -404,6 +433,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rptcaja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CORTE.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

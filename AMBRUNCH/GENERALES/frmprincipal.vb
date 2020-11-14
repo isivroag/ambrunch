@@ -36,4 +36,10 @@
         frmcntaticket.BringToFront()
 
     End Sub
+
+    Private Sub bcorte_Click(sender As Object, e As EventArgs) Handles bcorte.Click
+        frmcortecaja.Show()
+        frmcortecaja.BringToFront()
+
+    End Sub
 End Class

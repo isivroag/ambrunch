@@ -14,8 +14,6 @@ Public Class frmcntaticket
         grdetalle.DataSource = Nothing
         grdetalle.Rows.Clear()
         grdetalle.Columns.Clear()
-        Dim opc As String
-
 
         conn.consulta(grdetalle, "select folio_vta,folio_pago,fecha_vta,cliente,total_vta,metodo from vventa where fecha_vta between '" & Format(fechaini, "yyyy-MM-dd HH:mm:ss") & "' and '" & Format(fechafin, "yyyy-MM-dd HH:mm:ss") & "'")
 
@@ -37,15 +35,9 @@ Public Class frmcntaticket
 
         grdetalle.AutoResizeColumns()
         grdetalle.Columns(3).Width = 200
-        'grdetalle.Columns(2).Width = 70
+
         grdetalle.Columns(4).DefaultCellStyle.Format = "C2"
         grdetalle.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-
-
-        'grdetalle.Columns(0).Visible = False
-        'grdetalle.Columns(1).Visible = False
-        'grdetalle.Columns(7).Visible = False
-
 
 
 
@@ -70,14 +62,10 @@ Public Class frmcntaticket
 
     End Sub
 
-    Private Sub grdetalle_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdetalle.CellContentClick
-
-    End Sub
 
 
 
     Private Sub imprimir()
-
 
         frmrpt.folio = folio
         frmrpt.ticket()
@@ -87,8 +75,16 @@ Public Class frmcntaticket
     End Sub
 
     Private Sub grdetalle_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdetalle.CellDoubleClick
-        folio = Convert.ToString(grdetalle.Rows(e.RowIndex).Cells(0).Value)
-        imprimir()
 
+
+    End Sub
+
+    Private Sub bimprimir_Click(sender As Object, e As EventArgs) Handles bimprimir.Click
+        folio = Convert.ToString(grdetalle.CurrentRow().Cells(0).Value)
+        imprimir()
+    End Sub
+
+    Private Sub bsalir_Click(sender As Object, e As EventArgs) Handles bsalir.Click
+        Dispose()
     End Sub
 End Class

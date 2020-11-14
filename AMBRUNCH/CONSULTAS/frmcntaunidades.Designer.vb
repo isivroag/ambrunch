@@ -153,6 +153,7 @@ Partial Class frmcntaunidades
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.grdatos)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmcntaunidades"

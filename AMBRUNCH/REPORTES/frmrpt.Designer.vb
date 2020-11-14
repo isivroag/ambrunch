@@ -52,6 +52,9 @@ Partial Class frmrpt
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(334, 536)
         Me.Controls.Add(Me.ReportViewer)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmrpt"
         Me.Text = "frmrpt"
         Me.ResumeLayout(False)

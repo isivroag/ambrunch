@@ -29,6 +29,7 @@ Partial Class frmprincipal
         Me.binventario = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bcntaticket = New System.Windows.Forms.ToolStripButton()
+        Me.bcorte = New System.Windows.Forms.ToolStripButton()
         Me.toolmenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,7 +37,7 @@ Partial Class frmprincipal
         '
         Me.toolmenu.BackColor = System.Drawing.Color.White
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcorte})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(1088, 54)
@@ -98,6 +99,15 @@ Partial Class frmprincipal
         Me.bcntaticket.Text = "RPT CAJA"
         Me.bcntaticket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'bcorte
+        '
+        Me.bcorte.Image = Global.AMBRUNCH.My.Resources.Resources.CORTE
+        Me.bcorte.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcorte.Name = "bcorte"
+        Me.bcorte.Size = New System.Drawing.Size(46, 51)
+        Me.bcorte.Text = "CORTE"
+        Me.bcorte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -125,4 +135,5 @@ Partial Class frmprincipal
     Friend WithEvents binventario As ToolStripButton
     Friend WithEvents bsalir As ToolStripButton
     Friend WithEvents bcntaticket As ToolStripButton
+    Friend WithEvents bcorte As ToolStripButton
 End Class

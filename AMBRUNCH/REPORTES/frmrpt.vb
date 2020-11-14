@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class frmrpt
     Public folio As String
+    Public fecha As Date
     Dim seguir As Integer
     Public Sub ticket()
         Dim conn As New c_mysqlconn
@@ -17,6 +18,31 @@ Public Class frmrpt
 
 
 
+
+        tabla = conn.consulta(sql)
+        If tabla.Rows.Count > 0 Then
+            ReportViewer.ReportSource = REPORTE
+            REPORTE.SetDataSource(tabla)
+            seguir = 1
+
+            'ReportViewer.Refresh()
+        Else
+            MsgBox("NO EXISTE REGISTROS EN EL PAGO", vbInformation + vbOKOnly, "PAGO")
+            seguir = 0
+        End If
+
+    End Sub
+
+    Public Sub corteticket()
+        Dim conn As New c_mysqlconn
+        Dim tabla As New DataTable
+        Dim REPORTE As New rptcaja
+
+
+        Dim sql As String
+        sql = " SELECT vventa1.folio_pago, vventa1.fecha_vta, vventa1.total_vta, vventa1.metodo " &
+               "FROM   ambrunch.vventa vventa1 " &
+               "WHERE date(vventa1.fecha_vta)='" & Format(fecha, "yyyy-MM-dd") & "'"
 
         tabla = conn.consulta(sql)
         If tabla.Rows.Count > 0 Then
