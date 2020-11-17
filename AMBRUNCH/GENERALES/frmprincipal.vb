@@ -42,4 +42,10 @@
         frmcortecaja.BringToFront()
 
     End Sub
+
+    Private Sub bprodvta_Click(sender As Object, e As EventArgs) Handles bprodvta.Click
+        frmcntaprodvta.Show()
+        frmcntaprodvta.BringToFront()
+
+    End Sub
 End Class

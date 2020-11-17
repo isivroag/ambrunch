@@ -58,6 +58,31 @@ Public Class frmrpt
 
     End Sub
 
+    Public Sub prodvta()
+        Dim conn As New c_mysqlconn
+        Dim tabla As New DataTable
+        Dim REPORTE As New rptprodvta
+
+
+        Dim sql As String
+        sql = "SELECT vprodvta1.fecha_vta, vprodvta1.nom_prod, vprodvta1.cantidad, vprodvta1.precio_prod, vprodvta1.subtotal, vprodvta1.unidad_prod " &
+               "FROM ambrunch.vprodvta vprodvta1 " &
+               "WHERE Date(vprodvta1.fecha_vta)='" & Format(fecha, "yyyy-MM-dd") & "'"
+
+        tabla = conn.consulta(sql)
+        If tabla.Rows.Count > 0 Then
+            ReportViewer.ReportSource = REPORTE
+            REPORTE.SetDataSource(tabla)
+            seguir = 1
+
+            'ReportViewer.Refresh()
+        Else
+            MsgBox("NO EXISTE REGISTROS EN EL PAGO", vbInformation + vbOKOnly, "PAGO")
+            seguir = 0
+        End If
+
+    End Sub
+
     Private Sub frmrpt_Load(sender As Object, e As EventArgs) Handles Me.Load
         ExtendedMethods.DoubleBuffered(ReportViewer, True)
         'If seguir = 1 Then

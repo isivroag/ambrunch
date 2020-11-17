@@ -22,6 +22,7 @@ Partial Class frmlogin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmlogin))
         Me.btaceptar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
@@ -112,6 +113,7 @@ Partial Class frmlogin
         Me.Controls.Add(Me.tpassword)
         Me.Controls.Add(Me.tlogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmlogin"

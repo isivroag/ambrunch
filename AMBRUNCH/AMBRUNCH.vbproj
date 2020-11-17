@@ -13,6 +13,22 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\GDRIVE\PROYECTOS\AM BRUNCH\AMBRUNCH\publicacion\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +61,21 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FBDF97505317FE30443A2885A226CD55A9E5743A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AMBRUNCH_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -120,6 +151,12 @@
       <DependentUpon>frmcntaproducto.vb</DependentUpon>
     </Compile>
     <Compile Include="CONSULTAS\frmcntaproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONSULTAS\frmcntaprodvta.Designer.vb">
+      <DependentUpon>frmcntaprodvta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAS\frmcntaprodvta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CONSULTAS\frmcntaticket.Designer.vb">
@@ -217,7 +254,13 @@
       <DependentUpon>rptcorte.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="REPORTES\rptticket.vb">
+    <Compile Include="REPORTES\rptprodvta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptprodvta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\rptticket.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptticket.rpt</DependentUpon>
@@ -243,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\frmcntaproducto.resx">
       <DependentUpon>frmcntaproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAS\frmcntaprodvta.resx">
+      <DependentUpon>frmcntaprodvta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\frmcntaticket.resx">
       <DependentUpon>frmcntaticket.vb</DependentUpon>
@@ -291,7 +337,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptcorte.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="REPORTES\rptticket.rpt">
+    <EmbeddedResource Include="REPORTES\rptprodvta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptprodvta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\rptticket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptticket.vb</LastGenOutput>
     </EmbeddedResource>
@@ -307,6 +357,7 @@
     <None Include="ambrunchDataSet.xss">
       <DependentUpon>ambrunchDataSet.xsd</DependentUpon>
     </None>
+    <None Include="AMBRUNCH_ClaveTemporal.pfx" />
     <None Include="Dsticket.xsc">
       <DependentUpon>Dsticket.xsd</DependentUpon>
     </None>
@@ -439,6 +490,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CORTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icono.ico" />
+    <None Include="Resources\BAG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

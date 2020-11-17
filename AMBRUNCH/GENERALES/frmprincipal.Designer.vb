@@ -30,6 +30,7 @@ Partial Class frmprincipal
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bcntaticket = New System.Windows.Forms.ToolStripButton()
         Me.bcorte = New System.Windows.Forms.ToolStripButton()
+        Me.bprodvta = New System.Windows.Forms.ToolStripButton()
         Me.toolmenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,7 +38,7 @@ Partial Class frmprincipal
         '
         Me.toolmenu.BackColor = System.Drawing.Color.White
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcorte})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcorte, Me.bprodvta})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(1088, 54)
@@ -108,6 +109,15 @@ Partial Class frmprincipal
         Me.bcorte.Text = "CORTE"
         Me.bcorte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'bprodvta
+        '
+        Me.bprodvta.Image = Global.AMBRUNCH.My.Resources.Resources.BAG
+        Me.bprodvta.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bprodvta.Name = "bprodvta"
+        Me.bprodvta.Size = New System.Drawing.Size(58, 51)
+        Me.bprodvta.Text = "PROD VT"
+        Me.bprodvta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -118,9 +128,10 @@ Partial Class frmprincipal
         Me.ClientSize = New System.Drawing.Size(1088, 654)
         Me.Controls.Add(Me.toolmenu)
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmprincipal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmprincipal"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.toolmenu.ResumeLayout(False)
         Me.toolmenu.PerformLayout()
         Me.ResumeLayout(False)
@@ -136,4 +147,5 @@ Partial Class frmprincipal
     Friend WithEvents bsalir As ToolStripButton
     Friend WithEvents bcntaticket As ToolStripButton
     Friend WithEvents bcorte As ToolStripButton
+    Friend WithEvents bprodvta As ToolStripButton
 End Class
