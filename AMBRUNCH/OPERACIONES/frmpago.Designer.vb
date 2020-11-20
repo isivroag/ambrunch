@@ -22,6 +22,7 @@ Partial Class frmpago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmpago))
         Me.cmetodo = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,7 +39,7 @@ Partial Class frmpago
         Me.cmetodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmetodo.FormattingEnabled = True
         Me.cmetodo.Items.AddRange(New Object() {"EFECTIVO", "TARJETA"})
-        Me.cmetodo.Location = New System.Drawing.Point(152, 75)
+        Me.cmetodo.Location = New System.Drawing.Point(280, 75)
         Me.cmetodo.Name = "cmetodo"
         Me.cmetodo.Size = New System.Drawing.Size(160, 39)
         Me.cmetodo.TabIndex = 73
@@ -50,9 +51,9 @@ Partial Class frmpago
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(13, 75)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(133, 31)
+        Me.Label3.Size = New System.Drawing.Size(263, 31)
         Me.Label3.TabIndex = 72
-        Me.Label3.Text = "METODO"
+        Me.Label3.Text = "METODO DE PAGO"
         '
         'Label2
         '
@@ -68,7 +69,7 @@ Partial Class frmpago
         'tcambio
         '
         Me.tcambio.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tcambio.Location = New System.Drawing.Point(152, 178)
+        Me.tcambio.Location = New System.Drawing.Point(280, 178)
         Me.tcambio.Name = "tcambio"
         Me.tcambio.Size = New System.Drawing.Size(160, 38)
         Me.tcambio.TabIndex = 71
@@ -88,7 +89,7 @@ Partial Class frmpago
         'tpago
         '
         Me.tpago.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tpago.Location = New System.Drawing.Point(152, 127)
+        Me.tpago.Location = New System.Drawing.Point(280, 127)
         Me.tpago.Name = "tpago"
         Me.tpago.Size = New System.Drawing.Size(160, 38)
         Me.tpago.TabIndex = 69
@@ -108,7 +109,7 @@ Partial Class frmpago
         'ttotal
         '
         Me.ttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ttotal.Location = New System.Drawing.Point(152, 24)
+        Me.ttotal.Location = New System.Drawing.Point(280, 24)
         Me.ttotal.Name = "ttotal"
         Me.ttotal.Size = New System.Drawing.Size(160, 38)
         Me.ttotal.TabIndex = 67
@@ -126,7 +127,7 @@ Partial Class frmpago
         Me.bguardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.bguardar.Location = New System.Drawing.Point(12, 244)
         Me.bguardar.Name = "bguardar"
-        Me.bguardar.Size = New System.Drawing.Size(313, 39)
+        Me.bguardar.Size = New System.Drawing.Size(428, 39)
         Me.bguardar.TabIndex = 74
         Me.bguardar.Text = "PAGAR"
         Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -137,7 +138,7 @@ Partial Class frmpago
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(337, 303)
+        Me.ClientSize = New System.Drawing.Size(454, 303)
         Me.Controls.Add(Me.bguardar)
         Me.Controls.Add(Me.cmetodo)
         Me.Controls.Add(Me.Label3)
@@ -147,6 +148,8 @@ Partial Class frmpago
         Me.Controls.Add(Me.tpago)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ttotal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmpago"
         Me.Text = "frmpago"
         Me.ResumeLayout(False)

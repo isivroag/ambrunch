@@ -4,6 +4,7 @@
     Private _precio_prod As String
     Private _unidad_prod As String
     Private _estado_prod As Boolean
+    Private _contable_prod As Boolean
 
     Public Property Id_prod As Long
         Get
@@ -47,6 +48,15 @@
         End Get
         Set(value As Boolean)
             _estado_prod = value
+        End Set
+    End Property
+
+    Public Property Contable_prod As Boolean
+        Get
+            Return _contable_prod
+        End Get
+        Set(value As Boolean)
+            _contable_prod = value
         End Set
     End Property
 End Class

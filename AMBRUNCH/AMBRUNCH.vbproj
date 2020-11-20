@@ -63,7 +63,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icono.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>FBDF97505317FE30443A2885A226CD55A9E5743A</ManifestCertificateThumbprint>
@@ -122,13 +122,26 @@
     <Compile Include="CATALOGOS\frmunidad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CATALOGOS\frmusuario.Designer.vb">
+      <DependentUpon>frmusuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CATALOGOS\frmusuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CLASES\c_det_vta.vb" />
     <Compile Include="CLASES\c_movimiento.vb" />
     <Compile Include="CLASES\c_pago.vb" />
     <Compile Include="CLASES\c_producto.vb" />
     <Compile Include="CLASES\c_unidad.vb" />
+    <Compile Include="CLASES\c_usuario.vb" />
     <Compile Include="CLASES\c_venta.vb" />
     <Compile Include="CONEXION\c_mysqlconn.vb" />
+    <Compile Include="CONSULTAS\frmcntausuarios.Designer.vb">
+      <DependentUpon>frmcntausuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAS\frmcntausuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONSULTAS\frmbuscarp.Designer.vb">
       <DependentUpon>frmbuscarp.vb</DependentUpon>
     </Compile>
@@ -260,7 +273,7 @@
       <DependentUpon>rptprodvta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Resources\rptticket.vb">
+    <Compile Include="REPORTES\rptticket.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptticket.rpt</DependentUpon>
@@ -274,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CATALOGOS\frmunidad.resx">
       <DependentUpon>frmunidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CATALOGOS\frmusuario.resx">
+      <DependentUpon>frmusuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAS\frmcntausuarios.resx">
+      <DependentUpon>frmcntausuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\frmbuscarp.resx">
       <DependentUpon>frmbuscarp.vb</DependentUpon>
@@ -341,7 +360,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptprodvta.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\rptticket.rpt">
+    <EmbeddedResource Include="REPORTES\rptticket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptticket.vb</LastGenOutput>
     </EmbeddedResource>
@@ -492,7 +511,10 @@
     <None Include="Resources\CORTE.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.ico" />
     <Content Include="Icono.ico" />
+    <None Include="Resources\showblue.png" />
+    <None Include="Resources\show.png" />
     <None Include="Resources\BAG.png" />
   </ItemGroup>
   <ItemGroup>

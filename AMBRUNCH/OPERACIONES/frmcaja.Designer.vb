@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmcaja
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,19 @@ Partial Class frmcaja
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcaja))
         Me.GPANEL = New System.Windows.Forms.GroupBox()
-        Me.cfact = New System.Windows.Forms.CheckBox()
         Me.grdetalle = New System.Windows.Forms.DataGridView()
+        Me.cfact = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ttotal = New System.Windows.Forms.TextBox()
+        Me.bquitar = New System.Windows.Forms.Button()
+        Me.bagregar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tfecha = New System.Windows.Forms.DateTimePicker()
@@ -42,8 +45,6 @@ Partial Class frmcaja
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bpagar = New System.Windows.Forms.ToolStripButton()
         Me.bcancelar = New System.Windows.Forms.ToolStripButton()
-        Me.bquitar = New System.Windows.Forms.Button()
-        Me.bagregar = New System.Windows.Forms.Button()
         Me.GPANEL.SuspendLayout()
         CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.toolmenu.SuspendLayout()
@@ -52,8 +53,8 @@ Partial Class frmcaja
         'GPANEL
         '
         Me.GPANEL.BackColor = System.Drawing.Color.Transparent
-        Me.GPANEL.Controls.Add(Me.cfact)
         Me.GPANEL.Controls.Add(Me.grdetalle)
+        Me.GPANEL.Controls.Add(Me.cfact)
         Me.GPANEL.Controls.Add(Me.Label5)
         Me.GPANEL.Controls.Add(Me.ttotal)
         Me.GPANEL.Controls.Add(Me.bquitar)
@@ -73,6 +74,55 @@ Partial Class frmcaja
         Me.GPANEL.TabIndex = 60
         Me.GPANEL.TabStop = False
         '
+        'grdetalle
+        '
+        Me.grdetalle.AllowUserToAddRows = False
+        Me.grdetalle.AllowUserToDeleteRows = False
+        Me.grdetalle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grdetalle.BackgroundColor = System.Drawing.Color.White
+        Me.grdetalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.grdetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.grdetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.grdetalle.ColumnHeadersHeight = 30
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle2
+        Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.grdetalle.EnableHeadersVisualStyles = False
+        Me.grdetalle.GridColor = System.Drawing.Color.White
+        Me.grdetalle.Location = New System.Drawing.Point(19, 170)
+        Me.grdetalle.MultiSelect = False
+        Me.grdetalle.Name = "grdetalle"
+        Me.grdetalle.ReadOnly = True
+        Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.grdetalle.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
+        Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.grdetalle.Size = New System.Drawing.Size(665, 267)
+        Me.grdetalle.TabIndex = 99
+        '
         'cfact
         '
         Me.cfact.AutoSize = True
@@ -84,52 +134,6 @@ Partial Class frmcaja
         Me.cfact.Text = "EL CLIENTE DESEA FACTURA"
         Me.cfact.UseVisualStyleBackColor = True
         Me.cfact.Visible = False
-        '
-        'grdetalle
-        '
-        Me.grdetalle.AllowUserToAddRows = False
-        Me.grdetalle.AllowUserToDeleteRows = False
-        Me.grdetalle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grdetalle.BackgroundColor = System.Drawing.Color.White
-        Me.grdetalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.grdetalle.ColumnHeadersHeight = 30
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle2
-        Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.grdetalle.EnableHeadersVisualStyles = False
-        Me.grdetalle.GridColor = System.Drawing.Color.White
-        Me.grdetalle.Location = New System.Drawing.Point(18, 170)
-        Me.grdetalle.MultiSelect = False
-        Me.grdetalle.Name = "grdetalle"
-        Me.grdetalle.ReadOnly = True
-        Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdetalle.Size = New System.Drawing.Size(666, 267)
-        Me.grdetalle.TabIndex = 65
         '
         'Label5
         '
@@ -150,6 +154,31 @@ Partial Class frmcaja
         Me.ttotal.Size = New System.Drawing.Size(126, 35)
         Me.ttotal.TabIndex = 58
         Me.ttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'bquitar
+        '
+        Me.bquitar.BackColor = System.Drawing.Color.White
+        Me.bquitar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketmenos
+        Me.bquitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bquitar.Location = New System.Drawing.Point(645, 131)
+        Me.bquitar.Name = "bquitar"
+        Me.bquitar.Size = New System.Drawing.Size(39, 33)
+        Me.bquitar.TabIndex = 57
+        Me.bquitar.UseVisualStyleBackColor = False
+        '
+        'bagregar
+        '
+        Me.bagregar.BackColor = System.Drawing.Color.White
+        Me.bagregar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketplus
+        Me.bagregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bagregar.ForeColor = System.Drawing.Color.Black
+        Me.bagregar.Location = New System.Drawing.Point(600, 131)
+        Me.bagregar.Name = "bagregar"
+        Me.bagregar.Size = New System.Drawing.Size(39, 33)
+        Me.bagregar.TabIndex = 56
+        Me.bagregar.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -259,6 +288,7 @@ Partial Class frmcaja
         Me.bpagar.Size = New System.Drawing.Size(48, 43)
         Me.bpagar.Text = "PAGAR"
         Me.bpagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.bpagar.Visible = False
         '
         'bcancelar
         '
@@ -271,31 +301,6 @@ Partial Class frmcaja
         Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.bcancelar.Visible = False
         '
-        'bquitar
-        '
-        Me.bquitar.BackColor = System.Drawing.Color.White
-        Me.bquitar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketmenos
-        Me.bquitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.bquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bquitar.Location = New System.Drawing.Point(645, 131)
-        Me.bquitar.Name = "bquitar"
-        Me.bquitar.Size = New System.Drawing.Size(39, 33)
-        Me.bquitar.TabIndex = 57
-        Me.bquitar.UseVisualStyleBackColor = False
-        '
-        'bagregar
-        '
-        Me.bagregar.BackColor = System.Drawing.Color.White
-        Me.bagregar.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.basketplus
-        Me.bagregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.bagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bagregar.ForeColor = System.Drawing.Color.Black
-        Me.bagregar.Location = New System.Drawing.Point(600, 131)
-        Me.bagregar.Name = "bagregar"
-        Me.bagregar.Size = New System.Drawing.Size(39, 33)
-        Me.bagregar.TabIndex = 56
-        Me.bagregar.UseVisualStyleBackColor = False
-        '
         'frmcaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -304,6 +309,8 @@ Partial Class frmcaja
         Me.ClientSize = New System.Drawing.Size(721, 548)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.GPANEL)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmcaja"
         Me.Text = "frmcaja"
         Me.GPANEL.ResumeLayout(False)
@@ -318,7 +325,6 @@ Partial Class frmcaja
 
     Friend WithEvents GPANEL As GroupBox
     Friend WithEvents cfact As CheckBox
-    Private WithEvents grdetalle As DataGridView
     Friend WithEvents Label5 As Label
     Friend WithEvents ttotal As TextBox
     Friend WithEvents bquitar As Button
@@ -335,4 +341,5 @@ Partial Class frmcaja
     Friend WithEvents bsalir As ToolStripButton
     Friend WithEvents bpagar As ToolStripButton
     Friend WithEvents bcancelar As ToolStripButton
+    Private WithEvents grdetalle As DataGridView
 End Class

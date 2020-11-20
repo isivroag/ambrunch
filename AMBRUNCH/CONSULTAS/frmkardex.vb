@@ -67,6 +67,8 @@ Public Class frmkardex
     End Sub
 
     Private Sub bnuevo_Click(sender As Object, e As EventArgs) Handles bnuevo.Click
+
+
         frmmovimientos.Show()
         frmmovimientos.mostrar(datos)
         frmmovimientos.flag = 2

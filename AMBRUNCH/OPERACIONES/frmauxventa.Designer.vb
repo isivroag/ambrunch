@@ -22,6 +22,7 @@ Partial Class frmauxventa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmauxventa))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tsubtotal = New System.Windows.Forms.TextBox()
@@ -217,6 +218,8 @@ Partial Class frmauxventa
         Me.Controls.Add(Me.tprecio)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.tnom)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmauxventa"
         Me.Text = "frmauxventa"
         Me.ResumeLayout(False)

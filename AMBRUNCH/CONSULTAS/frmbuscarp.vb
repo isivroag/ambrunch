@@ -69,6 +69,7 @@ Public Class frmbuscarp
         frmauxventa.tcantidad.Focus()
         'Me.Hide()
 
+
         frmauxventa.Show()
         frmauxventa.tcantidad.Focus()
         frmauxventa.BringToFront()

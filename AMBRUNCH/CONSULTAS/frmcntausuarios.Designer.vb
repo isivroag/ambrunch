@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmcntaproducto
+Partial Class frmcntausuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -25,13 +25,11 @@ Partial Class frmcntaproducto
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcntaproducto))
         Me.ltitulo = New System.Windows.Forms.Label()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bcambiar = New System.Windows.Forms.ToolStripButton()
         Me.beliminar = New System.Windows.Forms.ToolStripButton()
-        Me.binventario = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.toolmenu.SuspendLayout()
@@ -42,22 +40,22 @@ Partial Class frmcntaproducto
         '
         Me.ltitulo.AutoSize = True
         Me.ltitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ltitulo.Location = New System.Drawing.Point(127, 46)
+        Me.ltitulo.Location = New System.Drawing.Point(127, 44)
         Me.ltitulo.Name = "ltitulo"
-        Me.ltitulo.Size = New System.Drawing.Size(364, 43)
-        Me.ltitulo.TabIndex = 81
-        Me.ltitulo.Text = "CONSULTA DE PRODUCTOS"
+        Me.ltitulo.Size = New System.Drawing.Size(336, 43)
+        Me.ltitulo.TabIndex = 84
+        Me.ltitulo.Text = "CONSULTA DE USUARIOS"
         Me.ltitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.ltitulo.UseCompatibleTextRendering = True
         '
         'toolmenu
         '
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bnuevo, Me.bcambiar, Me.beliminar, Me.binventario, Me.bsalir})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bnuevo, Me.bcambiar, Me.beliminar, Me.bsalir})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
-        Me.toolmenu.Size = New System.Drawing.Size(624, 46)
-        Me.toolmenu.TabIndex = 80
+        Me.toolmenu.Size = New System.Drawing.Size(594, 46)
+        Me.toolmenu.TabIndex = 83
         Me.toolmenu.Text = "ToolStrip1"
         '
         'bnuevo
@@ -86,15 +84,6 @@ Partial Class frmcntaproducto
         Me.beliminar.Size = New System.Drawing.Size(64, 43)
         Me.beliminar.Text = "ELIMINAR"
         Me.beliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'binventario
-        '
-        Me.binventario.Image = Global.AMBRUNCH.My.Resources.Resources.listainventario
-        Me.binventario.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.binventario.Name = "binventario"
-        Me.binventario.Size = New System.Drawing.Size(77, 43)
-        Me.binventario.Text = "INVENTARIO"
-        Me.binventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'bsalir
         '
@@ -137,7 +126,7 @@ Partial Class frmcntaproducto
         Me.grdatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.grdatos.EnableHeadersVisualStyles = False
         Me.grdatos.GridColor = System.Drawing.Color.White
-        Me.grdatos.Location = New System.Drawing.Point(12, 92)
+        Me.grdatos.Location = New System.Drawing.Point(12, 90)
         Me.grdatos.MultiSelect = False
         Me.grdatos.Name = "grdatos"
         Me.grdatos.ReadOnly = True
@@ -152,24 +141,20 @@ Partial Class frmcntaproducto
         Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.grdatos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
         Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdatos.Size = New System.Drawing.Size(600, 306)
-        Me.grdatos.TabIndex = 79
+        Me.grdatos.Size = New System.Drawing.Size(570, 276)
+        Me.grdatos.TabIndex = 82
         '
-        'frmcntaproducto
+        'cntausuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(624, 410)
+        Me.ClientSize = New System.Drawing.Size(594, 395)
         Me.Controls.Add(Me.ltitulo)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.grdatos)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "frmcntaproducto"
-        Me.Text = "frmcntaproducto"
+        Me.Name = "cntausuarios"
+        Me.Text = "cntausuarios"
         Me.toolmenu.ResumeLayout(False)
         Me.toolmenu.PerformLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -183,7 +168,6 @@ Partial Class frmcntaproducto
     Friend WithEvents bnuevo As ToolStripButton
     Friend WithEvents bcambiar As ToolStripButton
     Friend WithEvents beliminar As ToolStripButton
-    Friend WithEvents binventario As ToolStripButton
     Friend WithEvents bsalir As ToolStripButton
     Private WithEvents grdatos As DataGridView
 End Class

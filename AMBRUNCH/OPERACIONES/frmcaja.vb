@@ -6,11 +6,68 @@ Public Class frmcaja
     Dim conn As New c_mysqlconn
     Dim texto As String
     Dim tabla As New DataTable
+    Dim tablaprod As New DataTable
     Public flag As Integer
     Public folio As Integer
     Dim TOTAL As Double
     Dim id_reg As Integer
     Public Valoperacion As Integer
+
+    Public Sub inventario()
+        Dim idprod As Int64
+        Dim cantidad As Double
+        Dim contable As Boolean
+        Dim inicial As Double
+        Dim final As Double
+        Dim unidad As String
+
+        For i = 0 To grdetalle.Rows.Count - 1
+            idprod = grdetalle.Rows(i).Cells(2).Value
+            cantidad = grdetalle.Rows(i).Cells(4).Value
+            unidad = grdetalle.Rows(i).Cells(5).Value
+            ' consultar producto
+            conn = New c_mysqlconn
+            tablaprod = conn.consulta("select id_prod,contable_prod from producto where id_prod='" & idprod & "'")
+            If tablaprod.Rows.Count <> 0 Then
+                contable = tablaprod.Rows(0).Item("contable_prod").ToString
+                If contable = True Then
+                    'consultar inventario si el producto es inventariable siempre inventario 1
+                    conn = New c_mysqlconn
+                    inicial = conn.Obtener_dato("select cant_insumo as dato from vinventario where id_almacen=1 and id_prod='" & idprod & "'")
+                    final = inicial - cantidad
+                Else
+                    inicial = 0
+                    final = 0
+                End If
+
+                'registrar movimiento de venta en inventario
+                Dim movimiento As New c_movimiento
+                movimiento.Id_prod = idprod
+                movimiento.Id_almacen = 1
+                movimiento.Fecha_mov = tfecha.Value
+                movimiento.Cant_mov = cantidad
+                movimiento.Tipo_mov = 4
+                movimiento.Ini_mov = inicial
+                movimiento.Unidad_mov = unidad
+                movimiento.Fin_mov = final
+                movimiento.Obs_mov = "VENTA FOLIO " & folio
+                conn = New c_mysqlconn
+                conn.insertarmov(movimiento)
+
+                'actualizar inventario
+                conn = New c_mysqlconn
+                conn.actualizarproducto(idprod, 1, final)
+
+
+
+            End If
+
+
+
+
+
+        Next
+    End Sub
     Public Sub limpiar()
         tfolio.Text = ""
         tcliente.Text = ""
@@ -152,9 +209,7 @@ Public Class frmcaja
 
     End Sub
 
-    Private Sub GPANEL_Enter(sender As Object, e As EventArgs) Handles GPANEL.Enter
 
-    End Sub
 
     Private Sub bquitar_Click(sender As Object, e As EventArgs) Handles bquitar.Click
         If MsgBox("¿DESEA ELIMINAR ESTE PRODUCTO DE LA VENTA?", vbYesNo, "ELIMINAR PRODUCTO") = MsgBoxResult.Yes Then
@@ -207,5 +262,10 @@ Public Class frmcaja
             MsgBox("NO ES POSIBLE CERRAR CAJA, YA QUE TIENE UNA OPERACION PENDIENTE." & Chr(13) & " SI DESEA CERRAR, DEBE CANCELAR PRIMERO LA VENTA", vbExclamation + vbOKOnly, "CERRAR")
             e.Cancel = True
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        inventario()
+
     End Sub
 End Class

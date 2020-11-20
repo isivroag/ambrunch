@@ -429,6 +429,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B37E4407661B49D6A3BA741E6E83C276"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BB06B89E3C913ED63E53E11A4943CD0F"
         "OwnerKey" = "8:_7EA00AFEA32E42529443D9191BBF7D82"
         "MsmSig" = "8:_UNDEFINED"
@@ -455,12 +461,6 @@
         {
         "MsmKey" = "8:_CC2FE77ABB4C1E421E2E7ED59593A1F6"
         "OwnerKey" = "8:_8314AF3657E7383FFE3496D975697499"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D824E0A36A4D4D19BCC7E6FD39608760"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -668,6 +668,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -692,6 +700,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -1300,6 +1316,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B37E4407661B49D6A3BA741E6E83C276"
+            {
+            "SourcePath" = "8:..\\..\\IMAGENES\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_CC79E057C0F543F9980413D1D30D1897"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BB06B89E3C913ED63E53E11A4943CD0F"
             {
             "AssemblyRegister" = "3:1"
@@ -1360,26 +1396,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D824E0A36A4D4D19BCC7E6FD39608760"
-            {
-            "SourcePath" = "8:..\\..\\IMAGENES\\Icono.ico"
-            "TargetName" = "8:Icono.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_CC79E057C0F543F9980413D1D30D1897"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF0747BF19C55F9C69C61E7C6CCBC4D7"
@@ -1530,9 +1546,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:AM BRUNCH"
+        "ProductName" = "8:AMBRUNCH"
         "ProductCode" = "8:{6ED82A47-E806-4F8F-9F0F-757A3F646C77}"
-        "PackageCode" = "8:{B712674F-1BDA-4279-92BE-40A9250859AA}"
+        "PackageCode" = "8:{61D8E415-2125-4210-9F6E-F4FCD84A7369}"
         "UpgradeCode" = "8:{F62159E9-9000-4BD9-AA9E-109EBA95BB62}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1652,7 +1668,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_35399F3163614463927F4E13592BDC81"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3F049F3124954F16B71B898D0C93DCF9"
             {
             "Name" = "8:AMBRUNCH"
             "Arguments" = "8:"
@@ -1661,9 +1677,9 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_7EA00AFEA32E42529443D9191BBF7D82"
-            "Folder" = "8:_CC79E057C0F543F9980413D1D30D1897"
+            "Folder" = "8:_44A47D65296142D9950D86297C3D48B9"
             "WorkingFolder" = "8:_CC79E057C0F543F9980413D1D30D1897"
-            "Icon" = "8:_D824E0A36A4D4D19BCC7E6FD39608760"
+            "Icon" = "8:_B37E4407661B49D6A3BA741E6E83C276"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5656FA8FE11C45D2981A7D397597F533"
@@ -1677,10 +1693,10 @@
             "Target" = "8:_7EA00AFEA32E42529443D9191BBF7D82"
             "Folder" = "8:_B540CFCE734944D08A915C1E0D743512"
             "WorkingFolder" = "8:_CC79E057C0F543F9980413D1D30D1897"
-            "Icon" = "8:_D824E0A36A4D4D19BCC7E6FD39608760"
+            "Icon" = "8:_B37E4407661B49D6A3BA741E6E83C276"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CB0EF2255B4F4F7FB83381C2B67773E1"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C36D406CCAD0447D84085B48871C56B2"
             {
             "Name" = "8:AMBRUNCH"
             "Arguments" = "8:"
@@ -1689,9 +1705,9 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_7EA00AFEA32E42529443D9191BBF7D82"
-            "Folder" = "8:_44A47D65296142D9950D86297C3D48B9"
+            "Folder" = "8:_CC79E057C0F543F9980413D1D30D1897"
             "WorkingFolder" = "8:_CC79E057C0F543F9980413D1D30D1897"
-            "Icon" = "8:_D824E0A36A4D4D19BCC7E6FD39608760"
+            "Icon" = "8:_B37E4407661B49D6A3BA741E6E83C276"
             "Feature" = "8:"
             }
         }

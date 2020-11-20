@@ -22,6 +22,7 @@ Partial Class frmprincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmprincipal))
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
         Me.bunidad = New System.Windows.Forms.ToolStripButton()
         Me.bproductos = New System.Windows.Forms.ToolStripButton()
@@ -31,6 +32,8 @@ Partial Class frmprincipal
         Me.bcntaticket = New System.Windows.Forms.ToolStripButton()
         Me.bcorte = New System.Windows.Forms.ToolStripButton()
         Me.bprodvta = New System.Windows.Forms.ToolStripButton()
+        Me.busuario = New System.Windows.Forms.ToolStripButton()
+        Me.panelcontenedor = New System.Windows.Forms.Panel()
         Me.toolmenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -38,7 +41,7 @@ Partial Class frmprincipal
         '
         Me.toolmenu.BackColor = System.Drawing.Color.White
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcorte, Me.bprodvta})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcorte, Me.bprodvta, Me.busuario})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(1088, 54)
@@ -118,6 +121,26 @@ Partial Class frmprincipal
         Me.bprodvta.Text = "PROD VT"
         Me.bprodvta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'busuario
+        '
+        Me.busuario.Image = Global.AMBRUNCH.My.Resources.Resources.login2
+        Me.busuario.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.busuario.Name = "busuario"
+        Me.busuario.Size = New System.Drawing.Size(66, 51)
+        Me.busuario.Text = "USUARIOS"
+        Me.busuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'panelcontenedor
+        '
+        Me.panelcontenedor.BackColor = System.Drawing.Color.White
+        Me.panelcontenedor.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.fondo800
+        Me.panelcontenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.panelcontenedor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelcontenedor.Location = New System.Drawing.Point(0, 54)
+        Me.panelcontenedor.Name = "panelcontenedor"
+        Me.panelcontenedor.Size = New System.Drawing.Size(1088, 600)
+        Me.panelcontenedor.TabIndex = 80
+        '
         'frmprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -126,8 +149,11 @@ Partial Class frmprincipal
         Me.BackgroundImage = Global.AMBRUNCH.My.Resources.Resources.fondo800
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(1088, 654)
+        Me.Controls.Add(Me.panelcontenedor)
         Me.Controls.Add(Me.toolmenu)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.IsMdiContainer = True
         Me.Name = "frmprincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmprincipal"
@@ -148,4 +174,6 @@ Partial Class frmprincipal
     Friend WithEvents bcntaticket As ToolStripButton
     Friend WithEvents bcorte As ToolStripButton
     Friend WithEvents bprodvta As ToolStripButton
+    Friend WithEvents panelcontenedor As Panel
+    Friend WithEvents busuario As ToolStripButton
 End Class

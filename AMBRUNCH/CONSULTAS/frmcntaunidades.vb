@@ -41,12 +41,16 @@ Public Class frmcntaunidades
         datos.Nom_unidad = Convert.ToString(grdatos.CurrentRow().Cells(1).Value)
 
 
+
         frmunidad.Show()
         frmunidad.mostrar(datos)
         frmunidad.flag = 2
     End Sub
 
     Private Sub bnuevo_Click(sender As Object, e As EventArgs) Handles bnuevo.Click
+
+
+
         frmunidad.Show()
         frmunidad.flag = 1
     End Sub

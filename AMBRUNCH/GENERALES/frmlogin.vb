@@ -19,7 +19,7 @@ Public Class frmlogin
         If tipo <> 0 Then
             MsgBox("BIENVENIDO", vbOKOnly + vbInformation, "ENTRAR")
             nivelusuario = tipo
-            'frmprincipal.usuario = tipo
+            frmprincipal.usuario = tipo
             frmprincipal.Show()
 
 

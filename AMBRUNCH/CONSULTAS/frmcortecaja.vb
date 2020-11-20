@@ -48,14 +48,13 @@ Public Class frmcortecaja
 
     Private Sub bbuscar_Click(sender As Object, e As EventArgs) Handles bbuscar.Click
         fecha = (New Date(Dtfecha.Value.Year, Dtfecha.Value.Month, Dtfecha.Value.Day))
-
-
         consulta()
 
     End Sub
 
     Private Sub frmcortecaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtendedMethods.DoubleBuffered(grdetalle, True)
+        inicial(sender, e, "CORTE DE CAJA")
         Dtfecha.Value = (New Date(Now.Year, Now.Month, Now.Day, 0, 0, 0))
 
 

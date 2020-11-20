@@ -22,15 +22,16 @@ Partial Class frmunidad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmunidad))
         Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tnombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tid = New System.Windows.Forms.TextBox()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.bguardar = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox.SuspendLayout()
         Me.toolmenu.SuspendLayout()
         Me.SuspendLayout()
@@ -93,18 +94,6 @@ Partial Class frmunidad
         Me.toolmenu.TabIndex = 86
         Me.toolmenu.Text = "ToolStrip1"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(86, 56)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(273, 43)
-        Me.Label1.TabIndex = 85
-        Me.Label1.Text = "UNIDAD DE MEDIDA"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.UseCompatibleTextRendering = True
-        '
         'bguardar
         '
         Me.bguardar.Image = Global.AMBRUNCH.My.Resources.Resources.save
@@ -124,6 +113,18 @@ Partial Class frmunidad
         Me.bsalir.Text = "CANCELAR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(86, 56)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(273, 43)
+        Me.Label1.TabIndex = 85
+        Me.Label1.Text = "UNIDAD DE MEDIDA"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label1.UseCompatibleTextRendering = True
+        '
         'frmunidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -134,6 +135,7 @@ Partial Class frmunidad
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmunidad"

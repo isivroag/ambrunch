@@ -69,7 +69,7 @@ Public Class frmmovimientos
                 movimiento.Fin_mov = Convert.ToDouble(existencia) + Convert.ToDouble(tcant.Text)
         End Select
 
-        movimiento.Obs_mov = tobs.Text
+        movimiento.Obs_mov = UCase(tobs.Text)
 
         conn = New c_mysqlconn
         tabla.Clear()

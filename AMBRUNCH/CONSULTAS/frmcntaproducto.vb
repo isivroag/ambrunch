@@ -42,12 +42,14 @@ Public Class frmcntaproducto
         grdatos.Columns(3).HeaderText = "PRECIO"
 
         grdatos.Columns(4).HeaderText = "ESTADO"
+        grdatos.Columns(5).HeaderText = "CONTABLE"
         grdatos.AutoResizeColumns()
         grdatos.Columns(0).Width = 50
         grdatos.Columns(1).Width = 250
         grdatos.Columns(2).Width = 100
         grdatos.Columns(3).Width = 100
         grdatos.Columns(4).Visible = False
+        grdatos.Columns(5).Visible = False
 
 
 
@@ -62,6 +64,9 @@ Public Class frmcntaproducto
         datos.Nom_prod = Convert.ToString(grdatos.CurrentRow().Cells(1).Value)
         datos.Unidad_prod = Convert.ToString(grdatos.CurrentRow().Cells(2).Value)
         datos.Precio_prod = Convert.ToString(grdatos.CurrentRow().Cells(3).Value)
+        datos.Contable_prod = Convert.ToString(grdatos.CurrentRow().Cells(5).Value)
+
+
 
         frmproducto.Show()
         frmproducto.mostrar(datos)
@@ -69,6 +74,9 @@ Public Class frmcntaproducto
     End Sub
 
     Private Sub bnuevo_Click(sender As Object, e As EventArgs) Handles bnuevo.Click
+
+
+
         frmproducto.Show()
         frmproducto.flag = 1
     End Sub
@@ -98,6 +106,7 @@ Public Class frmcntaproducto
                         datos.Nom_prod = Convert.ToString(grdatos.CurrentRow().Cells(1).Value)
                         datos.Unidad_prod = Convert.ToString(grdatos.CurrentRow().Cells(2).Value)
                         datos.Precio_prod = Convert.ToString(grdatos.CurrentRow().Cells(3).Value)
+                        datos.Contable_prod = Convert.ToString(grdatos.CurrentRow().Cells(5).Value)
 
                         frmproducto.Show()
                         frmproducto.mostrar(datos)
@@ -119,6 +128,10 @@ Public Class frmcntaproducto
                     datos.Nom_prod = Convert.ToString(grdatos.CurrentRow().Cells(1).Value)
                     datos.Unidad_prod = Convert.ToString(grdatos.CurrentRow().Cells(2).Value)
 
+
+
+
+
                     frmkardex.Show()
                     frmkardex.mostrar(datos)
 
@@ -132,6 +145,7 @@ Public Class frmcntaproducto
         datos.Id_prod = Convert.ToString(grdatos.CurrentRow().Cells(0).Value)
         datos.Nom_prod = Convert.ToString(grdatos.CurrentRow().Cells(1).Value)
         datos.Unidad_prod = Convert.ToString(grdatos.CurrentRow().Cells(2).Value)
+
 
 
         frmkardex.Show()

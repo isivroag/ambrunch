@@ -25,8 +25,8 @@ Partial Class frmcortecaja
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcortecaja))
         Me.Dtfecha = New System.Windows.Forms.DateTimePicker()
-        Me.grdetalle = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ttotal = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,8 +35,9 @@ Partial Class frmcortecaja
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bimprimir = New System.Windows.Forms.ToolStripButton()
         Me.bbuscar = New System.Windows.Forms.Button()
-        CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grdetalle = New System.Windows.Forms.DataGridView()
         Me.toolmenu.SuspendLayout()
+        CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Dtfecha
@@ -47,52 +48,6 @@ Partial Class frmcortecaja
         Me.Dtfecha.Name = "Dtfecha"
         Me.Dtfecha.Size = New System.Drawing.Size(107, 20)
         Me.Dtfecha.TabIndex = 77
-        '
-        'grdetalle
-        '
-        Me.grdetalle.AllowUserToAddRows = False
-        Me.grdetalle.AllowUserToDeleteRows = False
-        Me.grdetalle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grdetalle.BackgroundColor = System.Drawing.Color.White
-        Me.grdetalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.grdetalle.ColumnHeadersHeight = 30
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle2
-        Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.grdetalle.EnableHeadersVisualStyles = False
-        Me.grdetalle.GridColor = System.Drawing.Color.White
-        Me.grdetalle.Location = New System.Drawing.Point(12, 135)
-        Me.grdetalle.MultiSelect = False
-        Me.grdetalle.Name = "grdetalle"
-        Me.grdetalle.ReadOnly = True
-        Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdetalle.Size = New System.Drawing.Size(323, 281)
-        Me.grdetalle.TabIndex = 79
         '
         'Label4
         '
@@ -176,27 +131,77 @@ Partial Class frmcortecaja
         Me.bbuscar.TabIndex = 78
         Me.bbuscar.UseVisualStyleBackColor = False
         '
+        'grdetalle
+        '
+        Me.grdetalle.AllowUserToAddRows = False
+        Me.grdetalle.AllowUserToDeleteRows = False
+        Me.grdetalle.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grdetalle.BackgroundColor = System.Drawing.Color.White
+        Me.grdetalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.grdetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.grdetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.grdetalle.ColumnHeadersHeight = 30
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle2
+        Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.grdetalle.EnableHeadersVisualStyles = False
+        Me.grdetalle.GridColor = System.Drawing.Color.White
+        Me.grdetalle.Location = New System.Drawing.Point(12, 123)
+        Me.grdetalle.MultiSelect = False
+        Me.grdetalle.Name = "grdetalle"
+        Me.grdetalle.ReadOnly = True
+        Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.grdetalle.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White
+        Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.grdetalle.Size = New System.Drawing.Size(323, 293)
+        Me.grdetalle.TabIndex = 100
+        '
         'frmcortecaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(347, 461)
+        Me.Controls.Add(Me.grdetalle)
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ttotal)
-        Me.Controls.Add(Me.grdetalle)
         Me.Controls.Add(Me.bbuscar)
         Me.Controls.Add(Me.Dtfecha)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmcortecaja"
         Me.Text = "frmcortecaja"
-        CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.toolmenu.ResumeLayout(False)
         Me.toolmenu.PerformLayout()
+        CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,7 +209,6 @@ Partial Class frmcortecaja
 
     Friend WithEvents bbuscar As Button
     Friend WithEvents Dtfecha As DateTimePicker
-    Private WithEvents grdetalle As DataGridView
     Friend WithEvents Label4 As Label
     Friend WithEvents ttotal As TextBox
     Friend WithEvents Label1 As Label
@@ -212,4 +216,5 @@ Partial Class frmcortecaja
     Friend WithEvents bexcel As ToolStripButton
     Friend WithEvents bsalir As ToolStripButton
     Friend WithEvents bimprimir As ToolStripButton
+    Private WithEvents grdetalle As DataGridView
 End Class

@@ -6,6 +6,7 @@ Public Class frmproducto
     Dim datos As New c_producto
     Dim tabla As New DataTable
     Public flag As Integer
+    Dim idprod As Integer
 
     Private Sub combo()
         conn = New c_mysqlconn
@@ -24,6 +25,7 @@ Public Class frmproducto
         tnombre.Text = producto.Nom_prod
         cunidad.Text = producto.Unidad_prod
         tprecio.Text = producto.Precio_prod
+        cinventario.Checked = producto.Contable_prod
 
 
     End Sub
@@ -48,11 +50,12 @@ Public Class frmproducto
     End Sub
 
     Private Sub bguardar_Click(sender As Object, e As EventArgs) Handles bguardar.Click
-        If Strings.Len(tnombre.Text) > 0 Then
+        If Strings.Len(tnombre.Text) > 0 And Strings.Len(tprecio.Text) > 0 And Strings.Len(cunidad.Text) > 0 Then
 
             datos.Nom_prod = UCase(tnombre.Text)
             datos.Unidad_prod = cunidad.Text
             datos.Precio_prod = tprecio.Text
+            datos.Contable_prod = cinventario.CheckState
 
 
 
@@ -62,6 +65,10 @@ Public Class frmproducto
                 If conn.insertarnuevo(datos) Then
                     MessageBox.Show("Datos Guardados", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     frmcntaproducto.consulta()
+                    conn = New c_mysqlconn
+                    idprod = conn.Obtener_ID("select max(id_prod) as max_id from producto")
+                    conn = New c_mysqlconn
+                    conn.primerinv(idprod, 1, 0, datos.Unidad_prod)
                     Me.Dispose()
                 Else
                     MessageBox.Show("Datos No Guardados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -83,5 +90,11 @@ Public Class frmproducto
     Private Sub frmproducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         inicial(sender, e, "PRODUCTOS")
         combo()
+    End Sub
+
+
+
+    Private Sub tprecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tprecio.KeyPress
+        solonumeros(sender, e)
     End Sub
 End Class

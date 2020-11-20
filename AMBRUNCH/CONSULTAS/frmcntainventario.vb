@@ -100,6 +100,9 @@ Public Class frmcntainventario
     End Sub
 
     Private Sub bmov_Click(sender As Object, e As EventArgs) Handles bmov.Click
+
+
+
         frmcntamovimientos.Show()
         frmcntamovimientos.almacen = grdatos.CurrentRow.Cells(1).Value
         frmcntamovimientos.insumo = grdatos.CurrentRow.Cells(3).Value
@@ -113,6 +116,10 @@ Public Class frmcntainventario
         datos.id_prod = grdatos.CurrentRow.Cells(3).Value
         datos.nom_prod = grdatos.CurrentRow.Cells(4).Value
         datos.unidad_prod = grdatos.CurrentRow.Cells(6).Value
+
+
+
+
         frmmovimientos.Show()
         frmmovimientos.flag = 1
         frmmovimientos.mostrar(datos)

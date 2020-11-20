@@ -26,9 +26,9 @@ Public Class frmcntaticket
     Private Sub formatogrid()
 
         grdetalle.Columns(0).HeaderText = "FOLIO_VTA"
-        grdetalle.Columns(0).HeaderText = "FOLIO_PAGO"
-        grdetalle.Columns(1).HeaderText = "FECHA"
-        grdetalle.Columns(2).HeaderText = "CLIENTE"
+        grdetalle.Columns(1).HeaderText = "FOLIO_PAGO"
+        grdetalle.Columns(2).HeaderText = "FECHA"
+        grdetalle.Columns(3).HeaderText = "CLIENTE"
         grdetalle.Columns(4).HeaderText = "TOTAL"
         grdetalle.Columns(5).HeaderText = "METODO"
 
@@ -52,6 +52,7 @@ Public Class frmcntaticket
     End Sub
     Private Sub frmcntaticket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtendedMethods.DoubleBuffered(grdetalle, True)
+        inicial(sender, e, "CONSULTA DE TICKETS")
         DtInicio.Value = (New Date(Now.Year, Now.Month, Now.Day, 0, 0, 0))
         DtFin.Value = (New Date(Now.Year, Now.Month, Now.Day, 23, 59, 59))
 
@@ -74,7 +75,7 @@ Public Class frmcntaticket
 
     End Sub
 
-    Private Sub grdetalle_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdetalle.CellDoubleClick
+    Private Sub grdetalle_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
 
 
     End Sub

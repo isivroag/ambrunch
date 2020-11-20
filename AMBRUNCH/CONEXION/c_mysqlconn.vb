@@ -230,7 +230,7 @@ Public Class c_mysqlconn
                 Case 5
                     adaptador.UpdateCommand = New MySqlCommand("update almacen Set estado_almacen=0 where id_almacen=@id", _conexion)
                 Case 6
-                   ' adaptador.UpdateCommand = New MySqlCommand("update alimento Set estado_ali=0 where id_ali=@id", _conexion)
+                    adaptador.UpdateCommand = New MySqlCommand("update usuario Set estado_u=0 where clave=@id", _conexion)
                 Case 7
                   '  adaptador.UpdateCommand = New MySqlCommand("update guarnicion Set estado_guar=0 where id_guar=@id", _conexion)
                 Case 8
@@ -263,6 +263,63 @@ Public Class c_mysqlconn
 
         Catch ex As MySqlException
             MsgBox("La conexión no fue exitosa,revise que el servidor este encendido y que el estado de su red sea adecuado" & ex.Message.ToString)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+#End Region
+
+#Region "USUARIO"
+    Public Function insertarnuevo(ByVal datos As c_usuario) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.InsertCommand = New MySqlCommand("insert into usuario(nombre,login,password,tipo) values (@nombre,@login,@password,@tipo)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = datos.Nombre
+            adaptador.InsertCommand.Parameters.Add("@login", MySqlDbType.VarChar).Value = datos.Login
+            adaptador.InsertCommand.Parameters.Add("@password", MySqlDbType.VarChar).Value = datos.Password
+            adaptador.InsertCommand.Parameters.Add("@tipo", MySqlDbType.Int16).Value = datos.Tipo
+
+
+            _conexion.Open()
+            adaptador.InsertCommand.Connection = _conexion
+            adaptador.InsertCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MsgBox("La conexión no fue exitosa,revise que el servidor este encendido y que el estado de su red sea adecuado" & ex.Message.ToString)
+            'MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+
+
+    Public Function modificar(ByVal datos As c_usuario, ByVal clave As String) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.UpdateCommand = New MySqlCommand("update usuario Set nombre=@nombre,login=@login,password=@password,tipo=@tipo where clave=@clave", _conexion)
+            adaptador.UpdateCommand.Parameters.Add("@clave", MySqlDbType.Int64).Value = clave
+            adaptador.UpdateCommand.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = datos.Nombre
+            adaptador.UpdateCommand.Parameters.Add("@login", MySqlDbType.VarChar).Value = datos.Login
+            adaptador.UpdateCommand.Parameters.Add("@password", MySqlDbType.VarChar).Value = datos.Password
+            adaptador.UpdateCommand.Parameters.Add("@tipo", MySqlDbType.Int16).Value = datos.Tipo
+
+
+
+            _conexion.Open()
+            adaptador.UpdateCommand.Connection = _conexion
+            adaptador.UpdateCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MsgBox("La conexión no fue exitosa,revise que el servidor este encendido y que el estado de su red sea adecuado" & ex.Message.ToString)
+            'MessageBox.Show(ex.Message)
             estado = False
         Finally
             desconectar()
@@ -326,10 +383,11 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.InsertCommand = New MySqlCommand("insert into producto(nom_prod,unidad_prod,precio_prod) values (@nom_prod,@unidad_prod,@precio_prod)", _conexion)
+            adaptador.InsertCommand = New MySqlCommand("insert into producto(nom_prod,unidad_prod,precio_prod,contable_prod) values (@nom_prod,@unidad_prod,@precio_prod,@contable_prod)", _conexion)
             adaptador.InsertCommand.Parameters.Add("@nom_prod", MySqlDbType.VarChar).Value = datos.Nom_prod
             adaptador.InsertCommand.Parameters.Add("@unidad_prod", MySqlDbType.VarChar).Value = datos.Unidad_prod
             adaptador.InsertCommand.Parameters.Add("@precio_prod", MySqlDbType.Double).Value = datos.Precio_prod
+            adaptador.InsertCommand.Parameters.Add("@contable_prod", MySqlDbType.Bit).Value = datos.Contable_prod
 
             _conexion.Open()
             adaptador.InsertCommand.Connection = _conexion
@@ -351,11 +409,12 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.UpdateCommand = New MySqlCommand("update producto Set nom_prod=@nom_prod,unidad_prod=@unidad_prod,precio_prod=@precio_prod where id_prod=@id_prod", _conexion)
+            adaptador.UpdateCommand = New MySqlCommand("update producto Set nom_prod=@nom_prod,unidad_prod=@unidad_prod,precio_prod=@precio_prod,contable_prod=@contable_prod where id_prod=@id_prod", _conexion)
             adaptador.UpdateCommand.Parameters.Add("@id_prod", MySqlDbType.Int64).Value = clave
             adaptador.UpdateCommand.Parameters.Add("@nom_prod", MySqlDbType.VarChar).Value = datos.Nom_prod
             adaptador.UpdateCommand.Parameters.Add("@unidad_prod", MySqlDbType.VarChar).Value = datos.Unidad_prod
             adaptador.UpdateCommand.Parameters.Add("@precio_prod", MySqlDbType.Double).Value = datos.Precio_prod
+            adaptador.UpdateCommand.Parameters.Add("@contable_prod", MySqlDbType.Bit).Value = datos.Contable_prod
 
 
             _conexion.Open()

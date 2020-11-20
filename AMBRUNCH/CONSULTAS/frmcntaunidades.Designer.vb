@@ -25,6 +25,7 @@ Partial Class frmcntaunidades
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcntaunidades))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
@@ -154,6 +155,7 @@ Partial Class frmcntaunidades
         Me.Controls.Add(Me.toolmenu)
         Me.Controls.Add(Me.grdatos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmcntaunidades"

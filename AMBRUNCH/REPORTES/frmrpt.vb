@@ -2,6 +2,8 @@
 Public Class frmrpt
     Public folio As String
     Public fecha As Date
+    Public fechaini As Date
+    Public fechafin As Date
     Dim seguir As Integer
     Public Sub ticket()
         Dim conn As New c_mysqlconn
@@ -67,7 +69,7 @@ Public Class frmrpt
         Dim sql As String
         sql = "SELECT vprodvta1.fecha_vta, vprodvta1.nom_prod, vprodvta1.cantidad, vprodvta1.precio_prod, vprodvta1.subtotal, vprodvta1.unidad_prod " &
                "FROM ambrunch.vprodvta vprodvta1 " &
-               "WHERE Date(vprodvta1.fecha_vta)='" & Format(fecha, "yyyy-MM-dd") & "'"
+               "WHERE Date(vprodvta1.fecha_vta) between'" & Format(fechaini, "yyyy-MM-dd") & "' and '" & Format(fechafin, "yyyy-MM-dd") & "'"
 
         tabla = conn.consulta(sql)
         If tabla.Rows.Count > 0 Then
@@ -85,6 +87,7 @@ Public Class frmrpt
 
     Private Sub frmrpt_Load(sender As Object, e As EventArgs) Handles Me.Load
         ExtendedMethods.DoubleBuffered(ReportViewer, True)
+        inicial(sender, e, "IMPRESIÓN")
         'If seguir = 1 Then
         '    ReportViewer.Refresh()
         'Else

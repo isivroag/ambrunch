@@ -5,7 +5,8 @@ Imports MySql.Data.MySqlClient
 Public Class frmcntaprodvta
     Dim conn As New c_mysqlconn
     Dim fecha As DateTime
-
+    Dim fechaini As DateTime
+    Dim fechafin As DateTime
     Dim datos As New c_producto
     Dim tabla As New DataTable
     Public flag As Integer
@@ -16,13 +17,13 @@ Public Class frmcntaprodvta
         grdetalle.Rows.Clear()
         grdetalle.Columns.Clear()
 
-        conn.consulta(grdetalle, "select cantidad,nom_prod,precio_prod,unidad_prod,subtotal from vprodvta where date(fecha_vta) = '" & Format(Dtfecha.Value, "yyyy-MM-dd") & "' order by folio_pago")
+        conn.consulta(grdetalle, "select cantidad,nom_prod,precio_prod,unidad_prod,subtotal from vprodvta where date(fecha_vta) between '" & Format(fechaini, "yyyy-MM-dd HH:mm:ss") & "' and '" & Format(fechafin, "yyyy-MM-dd HH:mm:ss") & "' order by folio_pago")
 
 
         formatogrid()
 
         conn = New c_mysqlconn
-        ttotal.Text = conn.Obtener_dato("SELECT sum(subtotal) as dato  FROM vprodvta WHERE date(fecha_vta)='" & Format(Dtfecha.Value, "yyyy-MM-dd") & "' GROUP BY folio_vta")
+        ttotal.Text = conn.Obtener_dato("SELECT sum(subtotal) as dato FROM vprodvta WHERE date(fecha_vta) between '" & Format(fechaini, "yyyy-MM-dd HH:mm:ss") & "' and '" & Format(fechafin, "yyyy-MM-dd HH:mm:ss") & "'")
 
     End Sub
     Private Sub formatogrid()
@@ -51,8 +52,9 @@ Public Class frmcntaprodvta
     End Sub
 
     Private Sub bbuscar_Click(sender As Object, e As EventArgs) Handles bbuscar.Click
-        fecha = (New Date(Dtfecha.Value.Year, Dtfecha.Value.Month, Dtfecha.Value.Day))
 
+        fechaini = (New Date(DtInicio.Value.Year, DtInicio.Value.Month, DtInicio.Value.Day, 0, 0, 0))
+        fechafin = (New Date(DtFin.Value.Year, DtFin.Value.Month, DtFin.Value.Day, 23, 59, 59))
 
         consulta()
 
@@ -61,7 +63,8 @@ Public Class frmcntaprodvta
     Private Sub imprimir()
 
 
-        frmrpt.fecha = fecha
+        frmrpt.fechaini = fechaini
+        frmrpt.fechafin = fechafin
         frmrpt.prodvta()
         frmrpt.ShowDialog()
         frmrpt.BringToFront()
@@ -83,8 +86,14 @@ Public Class frmcntaprodvta
     End Sub
     Private Sub frmcntaprodvta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtendedMethods.DoubleBuffered(grdetalle, True)
-        Dtfecha.Value = (New Date(Now.Year, Now.Month, Now.Day, 0, 0, 0))
+        inicial(sender, e, "PRODUCTOS VENDIDOS")
 
+        DtInicio.Value = (New Date(Now.Year, Now.Month, Now.Day, 0, 0, 0))
+        DtFin.Value = (New Date(Now.Year, Now.Month, Now.Day, 23, 59, 59))
+
+
+        fechaini = (New Date(Now.Year, Now.Month, Now.Day, 0, 0, 0))
+        fechafin = (New Date(Now.Year, Now.Month, Now.Day, 23, 59, 59))
 
 
         fecha = (New Date(Now.Year, Now.Month, Now.Day))
