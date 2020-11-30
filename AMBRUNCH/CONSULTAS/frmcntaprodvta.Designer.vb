@@ -33,13 +33,16 @@ Partial Class frmcntaprodvta
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ttotal = New System.Windows.Forms.TextBox()
-        Me.Dtfecha = New System.Windows.Forms.DateTimePicker()
         Me.bbuscar = New System.Windows.Forms.Button()
         Me.grdetalle = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DtFin = New System.Windows.Forms.DateTimePicker()
         Me.DtInicio = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tdescuentos = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tpagos = New System.Windows.Forms.TextBox()
         Me.toolmenu.SuspendLayout()
         CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -88,7 +91,7 @@ Partial Class frmcntaprodvta
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(142, 59)
+        Me.Label1.Location = New System.Drawing.Point(142, 51)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(318, 43)
         Me.Label1.TabIndex = 96
@@ -100,27 +103,18 @@ Partial Class frmcntaprodvta
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(433, 437)
+        Me.Label4.Location = New System.Drawing.Point(12, 434)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 15)
+        Me.Label4.Size = New System.Drawing.Size(78, 15)
         Me.Label4.TabIndex = 94
-        Me.Label4.Text = "TOTAL"
+        Me.Label4.Text = "SUMA PROD"
         '
         'ttotal
         '
-        Me.ttotal.Location = New System.Drawing.Point(482, 435)
+        Me.ttotal.Location = New System.Drawing.Point(96, 432)
         Me.ttotal.Name = "ttotal"
         Me.ttotal.Size = New System.Drawing.Size(109, 20)
         Me.ttotal.TabIndex = 95
-        '
-        'Dtfecha
-        '
-        Me.Dtfecha.CustomFormat = "yyyy-MM-dd"
-        Me.Dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Dtfecha.Location = New System.Drawing.Point(448, 105)
-        Me.Dtfecha.Name = "Dtfecha"
-        Me.Dtfecha.Size = New System.Drawing.Size(107, 20)
-        Me.Dtfecha.TabIndex = 91
         '
         'bbuscar
         '
@@ -129,7 +123,7 @@ Partial Class frmcntaprodvta
         Me.bbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.bbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bbuscar.ForeColor = System.Drawing.Color.Black
-        Me.bbuscar.Location = New System.Drawing.Point(561, 100)
+        Me.bbuscar.Location = New System.Drawing.Point(462, 97)
         Me.bbuscar.Name = "bbuscar"
         Me.bbuscar.Size = New System.Drawing.Size(30, 30)
         Me.bbuscar.TabIndex = 92
@@ -189,7 +183,7 @@ Partial Class frmcntaprodvta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(267, 105)
+        Me.Label2.Location = New System.Drawing.Point(286, 105)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 15)
         Me.Label2.TabIndex = 102
@@ -200,7 +194,7 @@ Partial Class frmcntaprodvta
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(101, 105)
+        Me.Label6.Location = New System.Drawing.Point(120, 105)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(47, 15)
         Me.Label6.TabIndex = 101
@@ -210,7 +204,7 @@ Partial Class frmcntaprodvta
         '
         Me.DtFin.CustomFormat = "yyyy-MM-dd"
         Me.DtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtFin.Location = New System.Drawing.Point(321, 105)
+        Me.DtFin.Location = New System.Drawing.Point(340, 105)
         Me.DtFin.Name = "DtFin"
         Me.DtFin.Size = New System.Drawing.Size(107, 20)
         Me.DtFin.TabIndex = 100
@@ -219,10 +213,44 @@ Partial Class frmcntaprodvta
         '
         Me.DtInicio.CustomFormat = "yyyy-MM-dd"
         Me.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtInicio.Location = New System.Drawing.Point(154, 105)
+        Me.DtInicio.Location = New System.Drawing.Point(173, 105)
         Me.DtInicio.Name = "DtInicio"
         Me.DtInicio.Size = New System.Drawing.Size(107, 20)
         Me.DtInicio.TabIndex = 99
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(211, 434)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(83, 15)
+        Me.Label3.TabIndex = 103
+        Me.Label3.Text = "DESCUENTOS"
+        '
+        'tdescuentos
+        '
+        Me.tdescuentos.Location = New System.Drawing.Point(300, 432)
+        Me.tdescuentos.Name = "tdescuentos"
+        Me.tdescuentos.Size = New System.Drawing.Size(109, 20)
+        Me.tdescuentos.TabIndex = 104
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(430, 432)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(46, 15)
+        Me.Label5.TabIndex = 105
+        Me.Label5.Text = "PAGOS"
+        '
+        'tpagos
+        '
+        Me.tpagos.Location = New System.Drawing.Point(482, 432)
+        Me.tpagos.Name = "tpagos"
+        Me.tpagos.Size = New System.Drawing.Size(109, 20)
+        Me.tpagos.TabIndex = 106
         '
         'frmcntaprodvta
         '
@@ -230,6 +258,10 @@ Partial Class frmcntaprodvta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(603, 470)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.tpagos)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.tdescuentos)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.DtFin)
@@ -240,7 +272,6 @@ Partial Class frmcntaprodvta
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ttotal)
         Me.Controls.Add(Me.bbuscar)
-        Me.Controls.Add(Me.Dtfecha)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmcntaprodvta"
@@ -261,10 +292,13 @@ Partial Class frmcntaprodvta
     Friend WithEvents Label4 As Label
     Friend WithEvents ttotal As TextBox
     Friend WithEvents bbuscar As Button
-    Friend WithEvents Dtfecha As DateTimePicker
     Private WithEvents grdetalle As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents DtFin As DateTimePicker
     Friend WithEvents DtInicio As DateTimePicker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents tdescuentos As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents tpagos As TextBox
 End Class

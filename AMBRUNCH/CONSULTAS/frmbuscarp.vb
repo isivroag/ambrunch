@@ -23,7 +23,7 @@ Public Class frmbuscarp
         grdetalle.Rows.Clear()
         grdetalle.Columns.Clear()
         conn = New c_mysqlconn
-        conn.consulta(grdetalle, "select * from producto where nom_prod like '%" & tbuscar.Text & "%' order by nom_prod")
+        conn.consulta(grdetalle, "select * from producto where nom_prod like '%" & tbuscar.Text & "%'or id_prod like '%" & tbuscar.Text & "%' order by nom_prod")
         formatogrid()
     End Sub
     Private Sub formatogrid()
@@ -46,6 +46,7 @@ Public Class frmbuscarp
 
 
         grdetalle.Columns(4).Visible = False
+        grdetalle.Columns(5).Visible = False
 
 
 

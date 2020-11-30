@@ -118,4 +118,10 @@
         frmcntausuarios.BringToFront()
 
     End Sub
+
+    Private Sub bcntavta_Click(sender As Object, e As EventArgs) Handles bcntavta.Click
+        frmcntaventa.Show()
+        frmcntaventa.BringToFront()
+
+    End Sub
 End Class

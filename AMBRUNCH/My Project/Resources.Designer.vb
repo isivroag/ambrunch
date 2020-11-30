@@ -103,6 +103,36 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property BILL() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("BILL", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property BILLCANCEL() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("BILLCANCEL", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property billcancel2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("billcancel2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property cancelar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cancelar", resourceCulture)

@@ -86,7 +86,7 @@ Public Class frmcntaproducto
             Dim clave As String
             clave = Convert.ToDouble(grdatos.CurrentRow().Cells(0).Value)
             conn = New c_mysqlconn
-            If conn.eliminar(clave, 4) = True Then
+            If conn.eliminar(clave, 4, "") = True Then
                 consulta()
                 MsgBox("REGISTRO ELIMINADO", vbInformation + vbOKOnly, "ELIMINAR")
             End If

@@ -74,5 +74,15 @@ Public Class frmkardex
         frmmovimientos.flag = 2
     End Sub
 
+    Private Sub bmov_Click(sender As Object, e As EventArgs) Handles bmov.Click
+        If grdatos.SelectedRows.Count > 0 Then
+            frmcntamovimientos.Show()
+            frmcntamovimientos.almacen = grdatos.Rows(0).Cells(1).Value
+            frmcntamovimientos.insumo = tid.Text
+            frmcntamovimientos.cant = grdatos.Rows(0).Cells(5).Value
+            frmcntamovimientos.consulta()
+            frmcntamovimientos.BringToFront()
+        End If
 
+    End Sub
 End Class

@@ -214,13 +214,13 @@ Public Class c_mysqlconn
 
 
 #Region "ELIMINAR"
-    Public Function eliminar(ByVal clave As String, ByVal indice As Integer) As Boolean
+    Public Function eliminar(ByVal clave As String, ByVal indice As Integer, ByVal obs As String) As Boolean
         Dim estado As Boolean = True
         Try
             conexion()
             Select Case indice
                 Case 1
-                   ' adaptador.UpdateCommand = New MySqlCommand("update mesa Set estado_mesa=0 where id_mesa=@id", _conexion)
+                    adaptador.UpdateCommand = New MySqlCommand("update venta Set estado_vta=0 and obs=@obs where folio_vta=@id", _conexion)
                 Case 2
                     adaptador.UpdateCommand = New MySqlCommand("update unidad Set estado_unidad=0 where id_unidad=@id", _conexion)
                 Case 3
@@ -254,6 +254,7 @@ Public Class c_mysqlconn
             End Select
 
             adaptador.UpdateCommand.Parameters.Add("@id", MySqlDbType.Int64).Value = clave
+            adaptador.UpdateCommand.Parameters.Add("@obs", MySqlDbType.String).Value = obs
 
 
             _conexion.Open()
@@ -667,11 +668,13 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.InsertCommand = New MySqlCommand("insert into pago (folio_vta,total_pago,dinero,cambio,letra,metodo) values (@folio_vta,@total_pago,@dinero,@cambio,@letra,@metodo)", _conexion)
+            adaptador.InsertCommand = New MySqlCommand("insert into pago (folio_vta,total_pago,dinero,cambio,letra,metodo,saldo,descuento) values (@folio_vta,@total_pago,@dinero,@cambio,@letra,@metodo,@saldo,@descuento)", _conexion)
             adaptador.InsertCommand.Parameters.Add("@folio_vta", MySqlDbType.Int64).Value = datos.Folio_vta
             adaptador.InsertCommand.Parameters.Add("@total_pago", MySqlDbType.Double).Value = datos.Total_pago
             adaptador.InsertCommand.Parameters.Add("@dinero", MySqlDbType.Double).Value = datos.Dinero
             adaptador.InsertCommand.Parameters.Add("@cambio", MySqlDbType.Double).Value = datos.Cambio
+            adaptador.InsertCommand.Parameters.Add("@saldo", MySqlDbType.Double).Value = datos.Saldo
+            adaptador.InsertCommand.Parameters.Add("@descuento", MySqlDbType.Double).Value = datos.Descuento
             adaptador.InsertCommand.Parameters.Add("@letra", MySqlDbType.String).Value = datos.Letra
             adaptador.InsertCommand.Parameters.Add("@metodo", MySqlDbType.String).Value = datos.Metodo
 

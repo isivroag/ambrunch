@@ -16,13 +16,13 @@ Public Class frmcortecaja
         grdetalle.Rows.Clear()
         grdetalle.Columns.Clear()
 
-        conn.consulta(grdetalle, "select folio_pago,total_vta,metodo from vventa where date(fecha_vta) = '" & Format(Dtfecha.Value, "yyyy-MM-dd") & "' order by folio_pago")
+        conn.consulta(grdetalle, "select folio_pago,total_vta,metodo from vventa where vventa.estado_vta=1 and date(fecha_vta) = '" & Format(Dtfecha.Value, "yyyy-MM-dd") & "' order by folio_pago")
 
 
         formatogrid()
 
         conn = New c_mysqlconn
-        ttotal.Text = conn.Obtener_dato("SELECT SUM(total_vta) as dato FROM vventa WHERE date(fecha_vta)='" & Format(Dtfecha.Value, "yyyy-MM-dd") & "' GROUP BY DATE(fecha_vta)")
+        ttotal.Text = conn.Obtener_dato("SELECT SUM(total_vta) as dato FROM vventa WHERE vventa.estado_vta=1 and date(fecha_vta)='" & Format(Dtfecha.Value, "yyyy-MM-dd") & "' GROUP BY DATE(fecha_vta)")
 
     End Sub
     Private Sub formatogrid()

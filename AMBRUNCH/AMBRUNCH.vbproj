@@ -184,6 +184,12 @@
     <Compile Include="CONSULTAS\frmcntaunidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CONSULTAS\frmcntaventa.Designer.vb">
+      <DependentUpon>frmcntaventa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONSULTAS\frmcntaventa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONSULTAS\frmcortecaja.Designer.vb">
       <DependentUpon>frmcortecaja.vb</DependentUpon>
     </Compile>
@@ -235,6 +241,12 @@
       <DependentUpon>frmcaja.vb</DependentUpon>
     </Compile>
     <Compile Include="OPERACIONES\frmcaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERACIONES\frmcancelar.Designer.vb">
+      <DependentUpon>frmcancelar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OPERACIONES\frmcancelar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OPERACIONES\frmmovimientos.Designer.vb">
@@ -315,6 +327,9 @@
     <EmbeddedResource Include="CONSULTAS\frmcntaunidades.resx">
       <DependentUpon>frmcntaunidades.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAS\frmcntaventa.resx">
+      <DependentUpon>frmcntaventa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\frmcortecaja.resx">
       <DependentUpon>frmcortecaja.vb</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OPERACIONES\frmcaja.resx">
       <DependentUpon>frmcaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERACIONES\frmcancelar.resx">
+      <DependentUpon>frmcancelar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OPERACIONES\frmmovimientos.resx">
       <DependentUpon>frmmovimientos.vb</DependentUpon>
@@ -513,6 +531,9 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Icono.ico" />
+    <None Include="Resources\billcancel2.png" />
+    <None Include="Resources\BILLCANCEL.png" />
+    <None Include="Resources\BILL.png" />
     <None Include="Resources\showblue.png" />
     <None Include="Resources\show.png" />
     <None Include="Resources\BAG.png" />

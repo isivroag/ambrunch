@@ -12,7 +12,7 @@ Public Class frmrpt
 
 
         Dim sql As String
-        sql = "SELECT vventa1.folio_vta, vventa1.folio_pago, vventa1.cliente, vventa1.total_vta, vventa1.dinero, vventa1.cambio, vventa1.letra, vventa1.metodo, det_vta1.nom_prod, det_vta1.cantidad, det_vta1.unidad_prod, det_vta1.precio_prod, det_vta1.subtotal, vventa1.fecha_vta " &
+        sql = "SELECT vventa1.folio_vta, vventa1.folio_pago, vventa1.cliente, vventa1.total_vta, vventa1.dinero, vventa1.cambio,vventa1.saldo,vventa1.descuento, vventa1.letra, vventa1.metodo, det_vta1.nom_prod, det_vta1.cantidad, det_vta1.unidad_prod, det_vta1.precio_prod, det_vta1.subtotal, vventa1.fecha_vta " &
             "FROM ambrunch.vventa vventa1 INNER JOIN ambrunch.det_vta det_vta1 ON vventa1.folio_vta=det_vta1.folio_vta " &
             "where vventa1.folio_vta='" & folio & "'" &
             "GROUP BY vventa1.folio_vta ORDER BY vventa1.folio_vta"
@@ -44,7 +44,7 @@ Public Class frmrpt
         Dim sql As String
         sql = " SELECT vventa1.folio_pago, vventa1.fecha_vta, vventa1.total_vta, vventa1.metodo " &
                "FROM   ambrunch.vventa vventa1 " &
-               "WHERE date(vventa1.fecha_vta)='" & Format(fecha, "yyyy-MM-dd") & "'"
+               "WHERE vventa1.estado_vta=1 and date(vventa1.fecha_vta)='" & Format(fecha, "yyyy-MM-dd") & "'"
 
         tabla = conn.consulta(sql)
         If tabla.Rows.Count > 0 Then

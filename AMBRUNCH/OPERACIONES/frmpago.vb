@@ -19,6 +19,8 @@ Public Class frmpago
                 pago.Dinero = tpago.Text
                 pago.Cambio = tcambio.Text
                 pago.Metodo = cmetodo.Text
+                pago.Saldo = tsaldo.Text
+                pago.Descuento = tdescuento.Text
 
                 pago.Letra = EnLetras(ttotal.Text)
                 conn = New c_mysqlconn
@@ -73,5 +75,42 @@ Public Class frmpago
         End If
     End Sub
 
+    Private Sub tpor_TextChanged(sender As Object, e As EventArgs) Handles tpor.TextChanged
 
+    End Sub
+
+    Private Sub tpor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tpor.KeyPress
+        solonumeros(sender, e)
+    End Sub
+
+    Private Sub tdescuento_TextChanged(sender As Object, e As EventArgs) Handles tdescuento.TextChanged
+
+    End Sub
+
+    Private Sub tdescuento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tdescuento.KeyPress
+        solonumeros(sender, e)
+    End Sub
+
+    Private Sub tpago_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tpago.KeyPress
+        solonumeros(sender, e)
+    End Sub
+
+    Private Sub tdescuento_LostFocus(sender As Object, e As EventArgs) Handles tdescuento.LostFocus
+        calculardesc()
+    End Sub
+
+    Private Sub calculardesc()
+        ttotal.Text = CDbl(tsaldo.Text) - CDbl(tdescuento.Text)
+        tpor.Text = Math.Round((CDbl(tdescuento.Text) / CDbl(tsaldo.Text)) * 100, 2)
+    End Sub
+
+    Private Sub calcularpor()
+
+        ttotal.Text = Math.Round(CDbl(tsaldo.Text) * (1 - (CDbl(tpor.Text) / 100)), 2)
+        tdescuento.Text = CDbl(tsaldo.Text) - CDbl(ttotal.Text)
+    End Sub
+
+    Private Sub tpor_LostFocus(sender As Object, e As EventArgs) Handles tpor.LostFocus
+        calcularpor()
+    End Sub
 End Class

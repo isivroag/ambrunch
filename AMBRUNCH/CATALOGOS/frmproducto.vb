@@ -26,6 +26,8 @@ Public Class frmproducto
         cunidad.Text = producto.Unidad_prod
         tprecio.Text = producto.Precio_prod
         cinventario.Checked = producto.Contable_prod
+        cinventario.Enabled = False
+        cunidad.Enabled = False
 
 
     End Sub

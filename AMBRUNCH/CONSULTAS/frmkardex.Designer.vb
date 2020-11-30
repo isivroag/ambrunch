@@ -41,6 +41,7 @@ Partial Class frmkardex
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
+        Me.bmov = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox.SuspendLayout()
@@ -210,7 +211,7 @@ Partial Class frmkardex
         'toolmenu
         '
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bnuevo, Me.bsalir})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bnuevo, Me.bsalir, Me.bmov})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(590, 46)
@@ -235,6 +236,15 @@ Partial Class frmkardex
         Me.bsalir.Size = New System.Drawing.Size(41, 43)
         Me.bsalir.Text = "SALIR"
         Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bmov
+        '
+        Me.bmov.Image = Global.AMBRUNCH.My.Resources.Resources.list
+        Me.bmov.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bmov.Name = "bmov"
+        Me.bmov.Size = New System.Drawing.Size(61, 43)
+        Me.bmov.Text = "VER MOV"
+        Me.bmov.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'frmkardex
         '
@@ -278,4 +288,5 @@ Partial Class frmkardex
     Friend WithEvents toolmenu As ToolStrip
     Friend WithEvents bnuevo As ToolStripButton
     Friend WithEvents bsalir As ToolStripButton
+    Friend WithEvents bmov As ToolStripButton
 End Class

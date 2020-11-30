@@ -5,9 +5,11 @@ Public Class frmmovimientos
     Dim texto As String
     Dim datos As New c_producto
     Dim tabla As New DataTable
+    Dim tablaprod As New DataTable
     Public flag As Integer
     Public existencia As Double
     Dim movimiento As New c_movimiento
+    Dim contable As Integer
 
 
     Private Sub combo()
@@ -47,11 +49,25 @@ Public Class frmmovimientos
     End Sub
 
     Private Sub bguardar_Click(sender As Object, e As EventArgs) Handles bguardar.Click
+
+        conn = New c_mysqlconn
+        tablaprod = conn.consulta("select id_prod,contable_prod from producto where id_prod='" & tid.Text & "'")
+        If tablaprod.Rows.Count <> 0 Then
+            contable = tablaprod.Rows(0).Item("contable_prod").ToString
+
+        End If
+
         movimiento.Id_prod = datos.Id_prod
         movimiento.Id_almacen = 1
         movimiento.Fecha_mov = Date.Today.Date.ToString
         movimiento.Tipo_mov = sacarclave(ctipo.Text)
-        movimiento.Ini_mov = existencia
+
+        If contable = True Then
+            movimiento.Ini_mov = existencia
+        Else
+            movimiento.Ini_mov = 0
+        End If
+
         movimiento.Unidad_mov = datos.Unidad_prod
         movimiento.Cant_mov = Convert.ToDouble(tcant.Text)
 
@@ -68,6 +84,10 @@ Public Class frmmovimientos
             Case 5
                 movimiento.Fin_mov = Convert.ToDouble(existencia) + Convert.ToDouble(tcant.Text)
         End Select
+
+        If contable = False Then
+            movimiento.Fin_mov = 0
+        End If
 
         movimiento.Obs_mov = UCase(tobs.Text)
 

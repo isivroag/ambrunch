@@ -242,7 +242,10 @@ Public Class frmcaja
                 venta.Letra = EnLetras(CDbl(ttotal.Text))
                 conn.actualizarventa(venta, folio)
                 frmpago.foliovta = tfolio.Text
+                frmpago.tsaldo.Text = ttotal.Text
+                frmpago.tdescuento.Text = "0.00"
                 frmpago.ttotal.Text = ttotal.Text
+                frmpago.tpor.Text = "0"
                 frmpago.tpago.Text = "0.00"
                 frmpago.tcambio.Text = "0.00"
                 frmpago.ShowDialog()

@@ -7,7 +7,7 @@ Public Class frmauxventa
     Dim registro As c_det_vta
 
     Private Sub calcular()
-        If Len(tcantidad.Text) > 0 And Len(tprecio.Text) Then
+        If Len(tcantidad.Text) > 0 And Len(tprecio.Text) > 0 Then
             If Convert.ToDouble(tcantidad.Text) Then
                 tsubtotal.Text = Convert.ToDouble(tcantidad.Text) * Convert.ToDouble(tprecio.Text)
             Else

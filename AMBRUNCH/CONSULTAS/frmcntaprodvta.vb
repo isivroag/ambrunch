@@ -25,6 +25,12 @@ Public Class frmcntaprodvta
         conn = New c_mysqlconn
         ttotal.Text = conn.Obtener_dato("SELECT sum(subtotal) as dato FROM vprodvta WHERE date(fecha_vta) between '" & Format(fechaini, "yyyy-MM-dd HH:mm:ss") & "' and '" & Format(fechafin, "yyyy-MM-dd HH:mm:ss") & "'")
 
+        conn = New c_mysqlconn
+        tdescuentos.Text = conn.Obtener_dato("SELECT sum(descuento) as dato FROM vventa WHERE vventa.estado_vta=1 and date(fecha_vta) between '" & Format(fechaini, "yyyy-MM-dd HH:mm:ss") & "' and '" & Format(fechafin, "yyyy-MM-dd HH:mm:ss") & "'")
+
+        conn = New c_mysqlconn
+        tpagos.Text = conn.Obtener_dato("SELECT sum(total_vta) as dato FROM vventa WHERE vventa.estado_vta=1 and  date(fecha_vta) between '" & Format(fechaini, "yyyy-MM-dd HH:mm:ss") & "' and '" & Format(fechafin, "yyyy-MM-dd HH:mm:ss") & "'")
+
     End Sub
     Private Sub formatogrid()
 
@@ -72,7 +78,7 @@ Public Class frmcntaprodvta
     End Sub
 
     Private Sub bimprimir_Click(sender As Object, e As EventArgs) Handles bimprimir.Click
-        fecha = Dtfecha.Value
+
         imprimir()
     End Sub
 
@@ -82,7 +88,7 @@ Public Class frmcntaprodvta
     End Sub
 
     Private Sub bexcel_Click(sender As Object, e As EventArgs) Handles bexcel.Click
-        ExportarDatosExcel(grdetalle, "PRODUCTOS VENDIDOS DEL " & Format(Dtfecha.Value, "yyyy-MM-dd"))
+        ExportarDatosExcel(grdetalle, "PRODUCTOS VENDIDOS DEL " & Format(DtInicio.Value, "yyyy-MM-dd") & " AL " & Format(DtFin.Value, "yyyy-MM-dd"))
     End Sub
     Private Sub frmcntaprodvta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ExtendedMethods.DoubleBuffered(grdetalle, True)
@@ -99,5 +105,25 @@ Public Class frmcntaprodvta
         fecha = (New Date(Now.Year, Now.Month, Now.Day))
 
         consulta()
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub DtFin_ValueChanged(sender As Object, e As EventArgs) Handles DtFin.ValueChanged
+
+    End Sub
+
+    Private Sub DtInicio_ValueChanged(sender As Object, e As EventArgs) Handles DtInicio.ValueChanged
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

@@ -6,6 +6,9 @@
     Private _cambio As Double
     Private _letra As String
     Private _metodo As String
+    Private _saldo As Double
+    Private _descuento As Double
+
 
     Public Property Folio_pago As Long
         Get
@@ -67,6 +70,24 @@
         End Get
         Set(value As String)
             _metodo = value
+        End Set
+    End Property
+
+    Public Property Saldo As Double
+        Get
+            Return _saldo
+        End Get
+        Set(value As Double)
+            _saldo = value
+        End Set
+    End Property
+
+    Public Property Descuento As Double
+        Get
+            Return _descuento
+        End Get
+        Set(value As Double)
+            _descuento = value
         End Set
     End Property
 End Class

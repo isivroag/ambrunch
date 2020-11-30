@@ -30,6 +30,7 @@ Partial Class frmprincipal
         Me.binventario = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bcntaticket = New System.Windows.Forms.ToolStripButton()
+        Me.bcntavta = New System.Windows.Forms.ToolStripButton()
         Me.bcorte = New System.Windows.Forms.ToolStripButton()
         Me.bprodvta = New System.Windows.Forms.ToolStripButton()
         Me.busuario = New System.Windows.Forms.ToolStripButton()
@@ -41,7 +42,7 @@ Partial Class frmprincipal
         '
         Me.toolmenu.BackColor = System.Drawing.Color.White
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcorte, Me.bprodvta, Me.busuario})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bunidad, Me.bproductos, Me.bcaja, Me.binventario, Me.bsalir, Me.bcntaticket, Me.bcntavta, Me.bcorte, Me.bprodvta, Me.busuario})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(1088, 54)
@@ -102,6 +103,15 @@ Partial Class frmprincipal
         Me.bcntaticket.Size = New System.Drawing.Size(63, 51)
         Me.bcntaticket.Text = "RPT CAJA"
         Me.bcntaticket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bcntavta
+        '
+        Me.bcntavta.Image = Global.AMBRUNCH.My.Resources.Resources.BILL
+        Me.bcntavta.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcntavta.Name = "bcntavta"
+        Me.bcntavta.Size = New System.Drawing.Size(54, 51)
+        Me.bcntavta.Text = "RPT VTA"
+        Me.bcntavta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'bcorte
         '
@@ -176,4 +186,5 @@ Partial Class frmprincipal
     Friend WithEvents bprodvta As ToolStripButton
     Friend WithEvents panelcontenedor As Panel
     Friend WithEvents busuario As ToolStripButton
+    Friend WithEvents bcntavta As ToolStripButton
 End Class
