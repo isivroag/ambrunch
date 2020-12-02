@@ -31,6 +31,7 @@ Partial Class frmcntainventario
         Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bmov = New System.Windows.Forms.ToolStripButton()
         Me.bimprimir = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.calmacen = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -42,7 +43,7 @@ Partial Class frmcntainventario
         'toolmenu
         '
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bsalir, Me.bnuevo, Me.bmov, Me.bimprimir})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bsalir, Me.bnuevo, Me.bmov, Me.bimprimir, Me.ToolStripButton1})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(601, 46)
@@ -85,6 +86,15 @@ Partial Class frmcntainventario
         Me.bimprimir.Size = New System.Drawing.Size(66, 43)
         Me.bimprimir.Text = "EXPORTAR"
         Me.bimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = Global.AMBRUNCH.My.Resources.Resources.print
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(63, 43)
+        Me.ToolStripButton1.Text = "IMPRIMIR"
+        Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'calmacen
         '
@@ -202,4 +212,5 @@ Partial Class frmcntainventario
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Private WithEvents grdatos As DataGridView
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

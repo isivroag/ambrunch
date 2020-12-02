@@ -10,7 +10,15 @@ Public Class frmcntainventario
     Public flag As Integer
     Dim sql As String
 
+    Private Sub imprimir()
 
+
+
+        frmrpt.inventario()
+        frmrpt.ShowDialog()
+        frmrpt.BringToFront()
+
+    End Sub
     Public Sub consulta()
         grdatos.DataSource = Nothing
         grdatos.Rows.Clear()
@@ -125,5 +133,8 @@ Public Class frmcntainventario
         frmmovimientos.mostrar(datos)
     End Sub
 
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        imprimir()
 
+    End Sub
 End Class

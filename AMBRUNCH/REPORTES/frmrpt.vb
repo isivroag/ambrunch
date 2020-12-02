@@ -54,7 +54,7 @@ Public Class frmrpt
 
             'ReportViewer.Refresh()
         Else
-            MsgBox("NO EXISTE REGISTROS EN EL PAGO", vbInformation + vbOKOnly, "PAGO")
+            MsgBox("NO EXISTE REGISTROS", vbInformation + vbOKOnly, "CORTE DE CAJA")
             seguir = 0
         End If
 
@@ -79,7 +79,7 @@ Public Class frmrpt
 
             'ReportViewer.Refresh()
         Else
-            MsgBox("NO EXISTE REGISTROS EN EL PAGO", vbInformation + vbOKOnly, "PAGO")
+            MsgBox("NO EXISTE REGISTROS", vbInformation + vbOKOnly, "PRODUCTOS VENDIDOS")
             seguir = 0
         End If
 
@@ -105,7 +105,31 @@ Public Class frmrpt
         '    End If
         'Next
     End Sub
+    Public Sub inventario()
+        Dim conn As New c_mysqlconn
+        Dim tabla As New DataTable
+        Dim REPORTE As New rptinventario
 
+
+        Dim sql As String
+        sql = "SELECT vinventario1.nom_insumo, vinventario1.cant_insumo, vinventario1.nom_unidad " &
+                "FROM vinventario vinventario1"
+
+
+
+
+        tabla = conn.consulta(sql)
+        If tabla.Rows.Count > 0 Then
+            ReportViewer.ReportSource = REPORTE
+            REPORTE.SetDataSource(tabla)
+            seguir = 1
+
+            'ReportViewer.Refresh()
+        Else
+            MsgBox("NO EXISTE REGISTROS", vbInformation + vbOKOnly, "INVENTARIO")
+            seguir = 0
+        End If
+    End Sub
     Private Sub ReportViewer_Load(sender As Object, e As EventArgs) Handles ReportViewer.Load
 
     End Sub

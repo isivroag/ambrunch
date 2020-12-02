@@ -25,17 +25,19 @@ Partial Class frmcntaventa
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcntaventa))
         Me.toolmenu = New System.Windows.Forms.ToolStrip()
+        Me.bexcel = New System.Windows.Forms.ToolStripButton()
+        Me.bsalir = New System.Windows.Forms.ToolStripButton()
+        Me.bcancelar = New System.Windows.Forms.ToolStripButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DtFin = New System.Windows.Forms.DateTimePicker()
         Me.DtInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.grdetalle = New System.Windows.Forms.DataGridView()
-        Me.bexcel = New System.Windows.Forms.ToolStripButton()
-        Me.bsalir = New System.Windows.Forms.ToolStripButton()
-        Me.bcancelar = New System.Windows.Forms.ToolStripButton()
         Me.bbuscar = New System.Windows.Forms.Button()
+        Me.bimprimir = New System.Windows.Forms.ToolStripButton()
         Me.toolmenu.SuspendLayout()
         CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,12 +45,40 @@ Partial Class frmcntaventa
         'toolmenu
         '
         Me.toolmenu.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bexcel, Me.bsalir, Me.bcancelar})
+        Me.toolmenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bexcel, Me.bsalir, Me.bcancelar, Me.bimprimir})
         Me.toolmenu.Location = New System.Drawing.Point(0, 0)
         Me.toolmenu.Name = "toolmenu"
         Me.toolmenu.Size = New System.Drawing.Size(805, 46)
         Me.toolmenu.TabIndex = 107
         Me.toolmenu.Text = "ToolStrip1"
+        '
+        'bexcel
+        '
+        Me.bexcel.Image = Global.AMBRUNCH.My.Resources.Resources.excel
+        Me.bexcel.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bexcel.Name = "bexcel"
+        Me.bexcel.Size = New System.Drawing.Size(66, 43)
+        Me.bexcel.Text = "EXPORTAR"
+        Me.bexcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bsalir
+        '
+        Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.bsalir.Image = Global.AMBRUNCH.My.Resources.Resources.SALIR
+        Me.bsalir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bsalir.Name = "bsalir"
+        Me.bsalir.Size = New System.Drawing.Size(41, 43)
+        Me.bsalir.Text = "SALIR"
+        Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bcancelar
+        '
+        Me.bcancelar.Image = Global.AMBRUNCH.My.Resources.Resources.billcancel2
+        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcancelar.Name = "bcancelar"
+        Me.bcancelar.Size = New System.Drawing.Size(71, 43)
+        Me.bcancelar.Text = "CANCELAR"
+        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'Label2
         '
@@ -96,11 +126,11 @@ Partial Class frmcntaventa
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(264, 50)
+        Me.Label1.Location = New System.Drawing.Point(216, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(289, 43)
+        Me.Label1.Size = New System.Drawing.Size(373, 43)
         Me.Label1.TabIndex = 101
-        Me.Label1.Text = "CONSULTA DE VENTA"
+        Me.Label1.Text = "ADMINISTRADOR DE VENTA"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label1.UseCompatibleTextRendering = True
         '
@@ -153,34 +183,6 @@ Partial Class frmcntaventa
         Me.grdetalle.Size = New System.Drawing.Size(781, 288)
         Me.grdetalle.TabIndex = 108
         '
-        'bexcel
-        '
-        Me.bexcel.Image = Global.AMBRUNCH.My.Resources.Resources.excel
-        Me.bexcel.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bexcel.Name = "bexcel"
-        Me.bexcel.Size = New System.Drawing.Size(66, 43)
-        Me.bexcel.Text = "EXPORTAR"
-        Me.bexcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bsalir
-        '
-        Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bsalir.Image = Global.AMBRUNCH.My.Resources.Resources.SALIR
-        Me.bsalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bsalir.Name = "bsalir"
-        Me.bsalir.Size = New System.Drawing.Size(41, 43)
-        Me.bsalir.Text = "SALIR"
-        Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bcancelar
-        '
-        Me.bcancelar.Image = Global.AMBRUNCH.My.Resources.Resources.billcancel2
-        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bcancelar.Name = "bcancelar"
-        Me.bcancelar.Size = New System.Drawing.Size(71, 43)
-        Me.bcancelar.Text = "CANCELAR"
-        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'bbuscar
         '
         Me.bbuscar.BackColor = System.Drawing.Color.White
@@ -193,6 +195,15 @@ Partial Class frmcntaventa
         Me.bbuscar.Size = New System.Drawing.Size(38, 30)
         Me.bbuscar.TabIndex = 106
         Me.bbuscar.UseVisualStyleBackColor = False
+        '
+        'bimprimir
+        '
+        Me.bimprimir.Image = Global.AMBRUNCH.My.Resources.Resources.print
+        Me.bimprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bimprimir.Name = "bimprimir"
+        Me.bimprimir.Size = New System.Drawing.Size(99, 43)
+        Me.bimprimir.Text = "REIMPRIMIR TIC."
+        Me.bimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'frmcntaventa
         '
@@ -208,6 +219,7 @@ Partial Class frmcntaventa
         Me.Controls.Add(Me.DtInicio)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.grdetalle)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmcntaventa"
         Me.Text = "frmcntaventa"
         Me.toolmenu.ResumeLayout(False)
@@ -229,4 +241,5 @@ Partial Class frmcntaventa
     Friend WithEvents Label1 As Label
     Private WithEvents grdetalle As DataGridView
     Friend WithEvents bcancelar As ToolStripButton
+    Friend WithEvents bimprimir As ToolStripButton
 End Class

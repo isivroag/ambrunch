@@ -25,7 +25,9 @@ Public Class frmauxventa
     End Sub
 
     Private Sub tcantidad_TextChanged(sender As Object, e As EventArgs) Handles tcantidad.TextChanged
-        calcular()
+        If tcantidad.Text <> "." Then
+            calcular()
+        End If
     End Sub
 
     Private Sub frmauxventa_Load(sender As Object, e As EventArgs) Handles MyBase.Load

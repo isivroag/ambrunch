@@ -37,7 +37,7 @@ Public Class frmcntaventa
         grdetalle.Columns(6).HeaderText = "ESTADO"
         grdetalle.Columns(7).HeaderText = "ESTADO"
 
-        grdetalle.Columns(1).Visible = False
+        ' grdetalle.Columns(1).Visible = False
         grdetalle.Columns(6).Visible = False
 
         grdetalle.AutoResizeColumns()
@@ -159,5 +159,19 @@ Public Class frmcntaventa
 
 
         End If
+    End Sub
+
+    Private Sub bimprimir_Click_1(sender As Object, e As EventArgs) Handles bimprimir.Click
+        folio = Convert.ToString(grdetalle.CurrentRow().Cells(0).Value)
+        imprimir()
+    End Sub
+
+    Private Sub imprimir()
+
+        frmrpt.folio = folio
+        frmrpt.ticket()
+        frmrpt.ShowDialog()
+        frmrpt.BringToFront()
+
     End Sub
 End Class
