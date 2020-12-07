@@ -11,9 +11,7 @@ Public Class frmcntainventario
     Dim sql As String
 
     Private Sub imprimir()
-
-
-
+        frmrpt.imprimir = 0
         frmrpt.inventario()
         frmrpt.ShowDialog()
         frmrpt.BringToFront()

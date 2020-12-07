@@ -27,6 +27,7 @@ Public Class frmpago
                 conn.insertarnuevo(pago)
                 imprimir()
                 Dispose()
+
                 frmcaja.inventario()
                 frmcaja.limpiar()
                 frmcaja.bnuevo.Visible = True
@@ -44,6 +45,7 @@ Public Class frmpago
 
 
         frmrpt.folio = foliovta
+        frmrpt.imprimir = 1
         frmrpt.ticket()
         frmrpt.ShowDialog()
         frmrpt.BringToFront()

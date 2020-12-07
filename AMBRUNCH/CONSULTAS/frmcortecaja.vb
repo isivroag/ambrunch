@@ -66,7 +66,7 @@ Public Class frmcortecaja
 
     Private Sub imprimir()
 
-
+        frmrpt.imprimir=0
         frmrpt.fecha = fecha
         frmrpt.corteticket()
         frmrpt.ShowDialog()

@@ -68,7 +68,7 @@ Public Class frmcntaprodvta
 
     Private Sub imprimir()
 
-
+        frmrpt.imprimir = 0
         frmrpt.fechaini = fechaini
         frmrpt.fechafin = fechafin
         frmrpt.prodvta()

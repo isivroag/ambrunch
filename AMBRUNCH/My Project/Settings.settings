@@ -22,5 +22,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=127.0.0.1;user id=root;password=tecniem;persistsecurityinfo=True;database=ambrunch</Value>
     </Setting>
+    <Setting Name="imprimir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="impresora" Type="System.String" Scope="User">
+      <Value Profile="(Default)">POS</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

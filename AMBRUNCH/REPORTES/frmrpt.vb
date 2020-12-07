@@ -4,6 +4,7 @@ Public Class frmrpt
     Public fecha As Date
     Public fechaini As Date
     Public fechafin As Date
+    Public imprimir As Integer
     Dim seguir As Integer
     Public Sub ticket()
         Dim conn As New c_mysqlconn
@@ -26,6 +27,12 @@ Public Class frmrpt
             ReportViewer.ReportSource = REPORTE
             REPORTE.SetDataSource(tabla)
             seguir = 1
+
+            If My.Settings.imprimir = 1 And imprimir = 1 Then
+                REPORTE.PrintOptions.PrinterName = My.Settings.impresora
+                REPORTE.PrintToPrinter(1, 1, 1, 1)
+                ReportViewer.ShowExportButton = True
+            End If
 
             'ReportViewer.Refresh()
         Else
